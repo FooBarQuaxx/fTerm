@@ -10,4 +10,4 @@ import sys
 import core
 
 # return our results
-print(core.funcs[sys.argv[1]](*sys.argv[2:]))
+core.getFunc[sys.argv[1]](*sys.argv[2:])
