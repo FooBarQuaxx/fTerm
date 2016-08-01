@@ -1,7 +1,7 @@
-#
-# fTerm 0.0.1a
-# Liam Schumm
-#
+"""
+fTerm 0.0.1a
+Liam Schumm
+"""
 
 # allows parsing of arguments (argv)
 import sys
