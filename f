@@ -8,13 +8,14 @@ Liam Schumm
 # allows parsing of arguments (argv)
 import sys
 
-# NLP parser
-import parser
+# parser
+import words.parser as parser
 
 # import actual functions
 import core
 
 def shellquote(s):
+    """Fix quotes for terminal."""
     print s,
     return "'" + s.replace("'", "'\\''") + "'"
 
@@ -28,7 +29,7 @@ def run():
     else:
         # retrieve the function
         try:
-            print "[f]",
+            print "[f-i]",
             f = core.verbs[parser.printAndParse(sys.argv[1])]
         except KeyError:
             print "[f] Invalid function '%s'" % (sys.argv[1])
@@ -38,6 +39,8 @@ def run():
         if argnum - 2 != f.func_code.co_argcount:
             print "[f] Wrong number of arguments for function %s" % (sys.argv[1])
         else:
-            f(*map(shellquote,sys.argv[2:]))
+            args = map(shellquote, sys.argv[2:])
+            raw_input()
+            f(*args)
 
 run()
