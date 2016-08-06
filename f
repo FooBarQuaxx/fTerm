@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 fTerm 0.0.1a
 Liam Schumm
