@@ -28,7 +28,7 @@ End with an example of getting some data out of the system or using it for a lit
 ## Authors
 
 * **Liam Schumm** - *Initial work* - [lschumm](https://github.com/lschumm)
-* **Andy Merrill** - *Idea* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Andy Merrill** - *Idea* - [appleinventor](https://github.com/appleinventor)
 
 
 ## License
