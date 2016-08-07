@@ -6,9 +6,15 @@ Liam Schumm
 # NOTE: extraneous
 # pylint: disable-msg=C0103
 
+from os.path import expanduser
+
 # for synonym matching
-import pickle
-meanings = pickle.load(open("/Users/lschumm/fTerm-dev/words/meanings.p", "r"))
+meanings = {}
+for item in open(expanduser("~/fTerm-dev/words/meanings.p"), "r").read().split("\n"):
+    if (item != "") and (item[0] != "#"):
+        parsedItem = item.split(":")
+        meanings[parsedItem[0]] = parsedItem[0]
+        meanings[parsedItem[1]] = parsedItem[0]
 
 # for string matching
 from difflib import get_close_matches
