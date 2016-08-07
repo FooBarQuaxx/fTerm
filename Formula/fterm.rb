@@ -9,7 +9,7 @@ class Fterm < Formula
 
   def install
      bin.install 'f'
-     bin.install 'core.py'
+     bin.install 'load.py'
      bin.install 'core'
 
    #  bin.install 'brew-any-tap.rb'
