@@ -43,14 +43,14 @@ List all fTerm commands.
 ## help command
 Return the docstring of fTerm function *command*.
 
-<!--   Getting Started
+# Getting Started (development version)
 
  # Installing (Mac)
 
 First, run
 
 ```
-brew tap lschumm/tap
+brew tap lschumm/fterm
 ```
 and then
 
@@ -58,7 +58,7 @@ and then
 brew install fterm
 ```
 
-End with an example of getting some data out of the system or using it for a little demo -->
+<!-- End with an example of getting some data out of the system or using it for a little demo -->
 
 
 
