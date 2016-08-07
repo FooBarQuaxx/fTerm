@@ -1,6 +1,6 @@
 require 'formula'
 
-class FTerm < Formula
+class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fTerm/'
   url 'https://github.com/lschumm/homebrew-fTerm.git'
   version '0.0.1b'
