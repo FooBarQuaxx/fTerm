@@ -10,10 +10,10 @@ fTerm 0.0.1b
 import sys
 
 # parser
-import words.parser as parser
+import core.parser as parser
 
 # import actual functions
-from load import verbs, nouns
+from load import verbs#, nouns
 
 def shellquote(s):
     """Fix quotes for terminal."""
