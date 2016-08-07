@@ -12,3 +12,7 @@ delete:wipe
 read:display
 
 edit:write
+edit:compose
+edit:revise
+
+help:assistance

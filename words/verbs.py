@@ -1,6 +1,5 @@
 """
-fTerm 0.0.1a
-Liam Schumm
+fTerm 0.0.1b
 """
 
 # NOTE: this is extraneous
@@ -57,7 +56,7 @@ def delete(filename):
 
 def dlist():
     """List the files in a directory."""
-    print os.system("ls")
+    os.system("ls")
 
 
 def read(filename):
@@ -69,7 +68,6 @@ def edit(filename):
     """Edit a file."""
     os.system('nano %s' % (filename))
 
-
 # translator from string to function
 verbs = {"swap":swap,
          "run":run,
@@ -77,6 +75,7 @@ verbs = {"swap":swap,
          "delete":delete,
          "read":read,
          "edit":edit,
+         "list":dlist,
         }
 
 def clist():
@@ -84,7 +83,7 @@ def clist():
     for verb in verbs:
         print verb, verbs[verb].__doc__
 
-verbs["list"] = clist
+verbs["commands"] = clist
 
 # define our help function on current getFunc
 def fhelp(command):

@@ -1,9 +1,9 @@
 #!/usr/bin/python
 """
-fTerm 0.0.1a
-Liam Schumm
+fTerm 0.0.1b
 """
 
+# NOTE: this is extraneous
 # pylint: disable-msg=C0103
 
 # allows parsing of arguments (argv)

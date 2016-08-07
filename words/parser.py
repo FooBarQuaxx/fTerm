@@ -1,12 +1,18 @@
 """
-fTerm 0.0.1a
-Liam Schumm
+fTerm 0.0.1b
 """
 
 # NOTE: extraneous
 # pylint: disable-msg=C0103
 
 from os.path import expanduser
+
+# for string matching
+from difflib import get_close_matches
+
+# import words
+from verbs import verbs
+# from nouns import nouns
 
 # for synonym matching
 meanings = {}
@@ -16,15 +22,9 @@ for item in open(expanduser("~/fTerm-dev/words/meanings.p"), "r").read().split("
         meanings[parsedItem[0]] = parsedItem[0]
         meanings[parsedItem[1]] = parsedItem[0]
 
-# for string matching
-from difflib import get_close_matches
-
-# import words
-from verbs import verbs
-# from nouns import nouns
 
 words = verbs.keys()
-#words.append(nouns.keys())
+# words.append(nouns.keys())
 
 def parse(word):
     """Interpret word as a fTerm word."""
