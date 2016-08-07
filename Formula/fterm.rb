@@ -10,7 +10,7 @@ class Fterm < Formula
   def install
      bin.install 'f'
      bin.install 'core.py'
-     bin.install 'words'
+     bin.install 'core'
 
    #  bin.install 'brew-any-tap.rb'
    #  bin.install 'brew-any-untap.rb'
