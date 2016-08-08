@@ -5,8 +5,6 @@ fTerm 0.0.1b
 # NOTE: extraneous
 # pylint: disable-msg=C0103
 
-from os.path import expanduser
-
 # for string matching
 from difflib import get_close_matches
 
@@ -16,7 +14,7 @@ from nouns import nouns
 
 # for synonym matching
 meanings = {}
-for item in open(expanduser("/usr/local/Library/Taps/lschumm/homebrew-fterm/core/meanings.p"), "r").read().split("\n"):
+for item in open("/usr/local/Library/Taps/lschumm/homebrew-fterm/core/meanings.p", "r").read().split("\n"):
     if (item != "") and (item[0] != "#"):
         parsedItem = item.split(":")
         meanings[parsedItem[0]] = parsedItem[0]
@@ -53,10 +51,3 @@ def softParse(word):
             return word
         else:
             return lookup[0]
-
-
-def printAndParse(word):
-    """Print and parse"""
-    p = parse(word)
-    print p,
-    return p

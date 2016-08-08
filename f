@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-$(echo python /usr/local/Library/Taps/lschumm/homebrew-fterm/f-i "$@")
+a=$(python ~/fTerm-dev/f-i "$@")
+eval $a

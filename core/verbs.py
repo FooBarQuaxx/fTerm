@@ -6,67 +6,69 @@ fTerm 0.0.1b
 # pylint: disable-msg=C0103
 
 # for running shell operations
-import os
-
 import subprocess
 
 
 def swap(file1, file2):
     """A function that swaps the names of two files."""
 
+    call = ""
+
     # make a temporary file
     temp = subprocess.Popen(["mktemp"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "")
 
     # move 1 to temp
-    os.system("mv %s %s" % (file1, temp))
+    call += "mv %s %s;" % (file1, temp)
 
     # move 2 to 1
-    os.system("mv %s %s" % (file2, file1))
+    call += "mv %s %s;" % (file2, file1)
 
     # move temp to 1
-    os.system("mv %s %s" % (temp, file2))
+    call += "mv %s %s;" % (temp, file2)
 
-    print "[f] Swapped %s and %s" % (file1, file2)
+    return "%s; echo [f] Swapped %s and %s;" % (call, file1, file2)
 
 def run(filename):
     """A universal run function."""
 
     # filter filename to appropriate command
-    command = {"py" : "python %s", "rb" : "ruby %s", "sh" : "sh %s", "pl" : "perl %s"}
+    command = {"py" : "python %s;", "rb" : "ruby %s;", "sh" : "sh %s;", "pl" : "perl %s;"}
 
     # get file extension
     ext = filename.split(".")[1]
 
-    # print the command we're going to run
-    print "[f]", command[ext] % (filename)
-
     # run the file
-    os.system(command[ext] % (filename))
+    return command[ext] % (filename)
 
 
 def size(filename):
     """Return the size of a file in human-readable format."""
-    os.system('echo [f] File size: $(echo %s | awk -F " " {\'print $5\'})' % (filename))
+
+    return 'echo [f] File size: $(echo %s | awk -F " " {\'print $5\'});' % (filename)
 
 
 def delete(filename):
     """Delete a file or directory."""
-    os.system('rm -rf %s' % (filename))
+
+    return 'rm -rf %s;' % (filename)
 
 
 def dlist():
     """List the files in a directory."""
-    os.system("ls")
+
+    return "ls;"
 
 
 def read(filename):
     """Read a file."""
-    os.system('cat %s' % (filename))
+
+    return 'cat %s;' % (filename)
 
 
 def edit(filename):
     """Edit a file."""
-    os.system('nano %s' % (filename))
+
+    return 'nano %s;' % (filename)
 
 # translator from string to function
 verbs = {"swap":swap,
@@ -80,18 +82,24 @@ verbs = {"swap":swap,
 
 def clist():
     """List all fTerm commands."""
+
+    call = ""
+
     for verb in verbs:
-        print verb, verbs[verb].__doc__
+        call += "echo %s;" % (verb), verbs[verb].__doc__
+
+    return call
 
 verbs["commands"] = clist
 
 # define our help function on current getFunc
 def fhelp(command):
     """Print the docstring of a command."""
+
     command = command.replace("'", "")
     if command == "help":
-        print "[f] Print the docstring of a command."
+        return "echo [f] Print the docstring of a command.;"
     else:
-        print "[f] %s" % (verbs[command].__doc__)
+        return "echo [f] %s;" % (verbs[command].__doc__)
 
 verbs["help"] = fhelp
