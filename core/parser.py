@@ -16,7 +16,7 @@ from nouns import nouns
 
 # for synonym matching
 meanings = {}
-for item in open(expanduser("/usr/local/Library/Taps/lschumm/homebrew-fterm/words/meanings.p"), "r").read().split("\n"):
+for item in open(expanduser("/usr/local/Library/Taps/lschumm/homebrew-fterm/core/meanings.p"), "r").read().split("\n"):
     if (item != "") and (item[0] != "#"):
         parsedItem = item.split(":")
         meanings[parsedItem[0]] = parsedItem[0]
