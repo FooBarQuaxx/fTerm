@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-$(echo python f-i "$@")
+a=$(python ~/fTerm-dev/f-i "$@")
+eval $a
