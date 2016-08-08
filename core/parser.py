@@ -1,7 +1,3 @@
-"""
-fTerm 0.0.1b
-"""
-
 # NOTE: extraneous
 # pylint: disable-msg=C0103
 
