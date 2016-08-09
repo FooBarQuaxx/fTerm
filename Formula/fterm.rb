@@ -12,6 +12,8 @@ class Fterm < Formula
      bin.install 'f-i'
      bin.install 'load.py'
      bin.install 'core'
+     puts "For the best experience, we recommend you use a terminal with auto-complete, such as fish (fish.sh) or zsh (zsh.org)."
+     sleep(5)
 
    #  bin.install 'brew-any-tap.rb'
    #  bin.install 'brew-any-untap.rb'
