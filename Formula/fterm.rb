@@ -3,7 +3,7 @@ require 'formula'
 class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fTerm/'
   url 'https://github.com/lschumm/homebrew-fTerm.git'
-  version '0.0.2a2'
+  version '0.0.2a3'
 
   # skip_clean 'bin'
 
