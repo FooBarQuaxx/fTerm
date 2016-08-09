@@ -7,15 +7,23 @@
 import subprocess
 
 
+synonyms = {"switch":"swap",
+            "exec":"run",
+            "execute":"run",
+            "space":"size",
+            "remove":"delete",
+            "annul":"delete",
+            "wipe":"delete",
+            "display":"read",
+            "write":"edit",
+            "compose":"edit",
+            "revise":"edit",
+            "assistance":"help",
+           }
+
 #
 # DIRECTORY OPERATIONS
 #
-
-
-def cd(directory):
-    """Change directory."""
-    return "cd %s;" % (directory)
-
 
 def dlist():
     """List the files in a directory."""
@@ -89,7 +97,6 @@ verbs = {"swap":swap,
          "read":read,
          "edit":edit,
          "list":dlist,
-         "cd":cd,
         }
 
 def clist():

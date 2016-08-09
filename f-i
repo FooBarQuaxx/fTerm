@@ -10,7 +10,7 @@ from sys import argv
 import core.parser as parser
 
 # import actual functions
-from load import verbs#, nouns
+from load import verbs, nouns
 
 def shellquote(s):
     """Fix quotes for terminal."""
@@ -38,7 +38,7 @@ def run():
             print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
         else:
             # args = map(shellquote, argv[2:])
-            args = argv[2:]
+            args = [parser.nounParse(x) for x in argv[2:]]
             suggestion += " " + " ".join(args)
             print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then %s fi" % (suggestion, f(*args))
             # print f(*args),
