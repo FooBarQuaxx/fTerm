@@ -1,8 +1,25 @@
 # NOTE: this is extraneous
 # pylint: disable-msg=C0103
+# NOTE: this makes code unreadable (for 1 liners)
+# pylint: disable-msg=C0303
 
 # for running shell operations
 import subprocess
+
+
+#
+# DIRECTORY OPERATIONS
+#
+
+
+def cd(directory):
+    """Change directory."""
+    return "cd %s;" % (directory)
+
+
+def dlist():
+    """List the files in a directory."""
+    return "ls;"
 
 
 def swap(file1, file2):
@@ -24,6 +41,34 @@ def swap(file1, file2):
 
     return "%s; echo [f] Swapped %s and %s;" % (call, file1, file2)
 
+
+def delete(filename):
+    """Delete a file or directory."""
+    return 'rm -rf %s;' % (filename)
+
+
+#
+# EDITING FILES
+#
+
+def read(filename):
+    """Read a file."""
+    return 'cat %s;' % (filename)
+
+
+def edit(filename):
+    """Edit a file."""
+    return 'nano %s;' % (filename)
+
+
+#
+# MISCELLANEOUS
+#
+
+def size(filename):
+    """Return the size of a file in human-readable format."""
+    return 'echo [f] File size: $(echo %s | awk -F " " {\'print $5\'});' % (filename)
+
 def run(filename):
     """A universal run function."""
 
@@ -36,36 +81,6 @@ def run(filename):
     # run the file
     return command[ext] % (filename)
 
-
-def size(filename):
-    """Return the size of a file in human-readable format."""
-
-    return 'echo [f] File size: $(echo %s | awk -F " " {\'print $5\'});' % (filename)
-
-
-def delete(filename):
-    """Delete a file or directory."""
-
-    return 'rm -rf %s;' % (filename)
-
-
-def dlist():
-    """List the files in a directory."""
-
-    return "ls;"
-
-
-def read(filename):
-    """Read a file."""
-
-    return 'cat %s;' % (filename)
-
-
-def edit(filename):
-    """Edit a file."""
-
-    return 'nano %s;' % (filename)
-
 # translator from string to function
 verbs = {"swap":swap,
          "run":run,
@@ -74,6 +89,7 @@ verbs = {"swap":swap,
          "read":read,
          "edit":edit,
          "list":dlist,
+         "cd":cd,
         }
 
 def clist():

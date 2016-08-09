@@ -29,13 +29,13 @@ def run():
             f = parser.parse(argv[1])
             suggestion += f
             f = verbs[f]
-        except KeyError:
-            print "echo [f] Invalid function '%s';" % (argv[1]),
+        except IndexError:
+            print "echo '[f-i] Invalid function %s';" % (argv[1]),
             return
 
         # ensure that the correct number of arguments are being passed
         if argnum - 2 != f.func_code.co_argcount:
-            print "echo [f] Wrong number of arguments for function '%s';" % (argv[1])
+            print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
         else:
             # args = map(shellquote, argv[2:])
             args = argv[2:]

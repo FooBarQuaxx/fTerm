@@ -16,3 +16,8 @@ edit:compose
 edit:revise
 
 help:assistance
+
+cd:goto
+cd:moveto
+cd:chdir
+cd:changedirectory

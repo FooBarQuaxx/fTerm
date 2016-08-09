@@ -9,13 +9,7 @@ from verbs import verbs
 from nouns import nouns
 
 # for synonym matching
-meanings = {}
-for item in open("/usr/local/Library/Taps/lschumm/homebrew-fterm/core/meanings.p", "r").read().split("\n"):
-    if (item != "") and (item[0] != "#"):
-        parsedItem = item.split(":")
-        meanings[parsedItem[0]] = parsedItem[0]
-        meanings[parsedItem[1]] = parsedItem[0]
-
+from meanings_loader import meanings
 
 words = verbs.keys()
 words.append(nouns.keys())
