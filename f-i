@@ -20,7 +20,7 @@ def run():
     """The main function for fTerm"""
     argnum = len(argv)
     if argnum == 1:
-        print "echo [f-i] Please specify a command (e.g., 'f swap file1 file2');"
+        print "echo '[f-i] Please specify a command (e.g., f swap file1 file2)';"
         return
     else:
         # retrieve the function
