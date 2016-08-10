@@ -19,6 +19,12 @@ synonyms = {"switch":"swap",
             "compose":"edit",
             "revise":"edit",
             "assistance":"help",
+            "compress":"crush",
+            "decompress":"expand",
+            "secure":"encrypt",
+            "lock":"encrypt",
+            "unlock":"decrypt",
+            "decode":"decrypt",
            }
 
 #
@@ -54,7 +60,6 @@ def delete(filename):
     """Delete a file or directory."""
     return 'rm -rf %s;' % (filename)
 
-
 #
 # EDITING FILES
 #
@@ -67,6 +72,27 @@ def read(filename):
 def edit(filename):
     """Edit a file."""
     return 'nano %s;' % (filename)
+
+
+#
+# ZAPCORE (github.com/lschumm/zapcore)
+#
+
+def compress(filename):
+    """Compress a file."""
+    return "zap pinch %s -p;" % (filename)
+
+def decompress(filename):
+    """Compress a file."""
+    return "zap up %s -p;" % (filename)
+
+def encrypt(filename):
+    """Compress a file."""
+    return "zap enc %s -r;" % (filename)
+
+def decrypt(filename):
+    """Compress a file."""
+    return "zap dec %s -r;" % (filename)
 
 
 #
@@ -97,6 +123,10 @@ verbs = {"swap":swap,
          "read":read,
          "edit":edit,
          "list":dlist,
+         "compress":compress,
+         "decompress":decompress,
+         "encrypt":encrypt,
+         "decrypt":decrypt,
         }
 
 def clist():

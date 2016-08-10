@@ -3,9 +3,10 @@ require 'formula'
 class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fTerm/'
   url 'https://github.com/lschumm/homebrew-fTerm.git'
-  version '0.0.2a4'
+  version '0.0.2a5'
 
   # skip_clean 'bin'
+  depends_on "zapcore"
 
   def install
      bin.install 'f'
