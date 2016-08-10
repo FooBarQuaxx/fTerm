@@ -83,15 +83,15 @@ def compress(filename):
     return "zap pinch %s -p;" % (filename)
 
 def decompress(filename):
-    """Compress a file."""
+    """Decompress a file."""
     return "zap up %s -p;" % (filename)
 
 def encrypt(filename):
-    """Compress a file."""
+    """Encrypt a file."""
     return "zap enc %s -r;" % (filename)
 
 def decrypt(filename):
-    """Compress a file."""
+    """Decrypt a file."""
     return "zap dec %s -r;" % (filename)
 
 
