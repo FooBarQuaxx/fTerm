@@ -77,6 +77,19 @@ List all fTerm commands.
 ## help *command*
 Return the docstring of fTerm function *command*.
 
+## compress *filename*
+Compress *filename* using the [PXZ compression utility](https://jnovy.fedorapeople.org/pxz/).
+
+## decompress *filename*
+Decompress *filename*.
+
+## encrypt *filename*
+Encrypt *filename* using the [OpenSSL encryption utility](https://www.openssl.org/).
+
+## decompress *filename*
+Decrypt *filename*.
+
+
 # Installing (Mac)
 
 First, run
