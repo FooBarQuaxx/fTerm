@@ -1,13 +1,13 @@
 # NOTE: this is extraneous
 # pylint: disable-msg=C0103
-# NOTE: this makes code unreadable (for 1 liners)
-# pylint: disable-msg=C0303
 
 # for running shell operations
 import subprocess
 
 
-synonyms = {"switch":"swap",
+synonyms = {
+            "files":"list",
+            "switch":"swap",
             "exec":"run",
             "execute":"run",
             "space":"size",
@@ -18,6 +18,7 @@ synonyms = {"switch":"swap",
             "write":"edit",
             "compose":"edit",
             "revise":"edit",
+            "commands":"commands", # there must be an entry
             "assistance":"help",
             "compress":"crush",
             "decompress":"expand",
@@ -31,7 +32,7 @@ synonyms = {"switch":"swap",
 # DIRECTORY OPERATIONS
 #
 
-def dlist():
+def List(): # name capitalised for no name conflict
     """List the files in a directory."""
     return "ls;"
 
@@ -114,41 +115,3 @@ def run(filename):
 
     # run the file
     return command[ext] % (filename)
-
-# translator from string to function
-verbs = {"swap":swap,
-         "run":run,
-         "size":size,
-         "delete":delete,
-         "read":read,
-         "edit":edit,
-         "list":dlist,
-         "compress":compress,
-         "decompress":decompress,
-         "encrypt":encrypt,
-         "decrypt":decrypt,
-        }
-
-def clist():
-    """List all fTerm commands."""
-
-    call = ""
-
-    for verb in verbs:
-        call += "echo %s : %s;" % (verb, verbs[verb].__doc__)
-
-    return call
-
-verbs["commands"] = clist
-
-# define our help function on current getFunc
-def fhelp(command):
-    """Print the docstring of a command."""
-
-    command = command.replace("'", "")
-    if command == "help":
-        return "echo [f] Print the docstring of a command.;"
-    else:
-        return "echo [f] %s;" % (verbs[command].__doc__)
-
-verbs["help"] = fhelp
