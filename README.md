@@ -1,6 +1,5 @@
 ![fTerm](logo.png)
 [![homebrew](https://img.shields.io/badge/homebrew-0.0.2a3-yellow.svg?style=flat-square)]()
-<!-- [![GitHub Issues](https://img.shields.io/github/issues/lschumm/fterm-dev.svg)](https://github.com/lschumm/zapcore/issues) -->
 [![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
 [![Awesome: true](https://img.shields.io/badge/awesome%20-yes-brightgreen.svg?style=flat-square)]()
 

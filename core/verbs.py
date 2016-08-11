@@ -53,7 +53,7 @@ def swap(file1, file2):
     # move temp to 1
     call += "mv %s %s;" % (temp, file2)
 
-    return "%s; echo [f] Swapped %s and %s;" % (call, file1, file2)
+    return call
 
 
 def delete(filename):
@@ -135,7 +135,7 @@ def clist():
     call = ""
 
     for verb in verbs:
-        call += "echo %s;" % (verb), verbs[verb].__doc__
+        call += "echo %s : %s;" % (verb, verbs[verb].__doc__)
 
     return call
 
