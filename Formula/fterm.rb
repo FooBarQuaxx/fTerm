@@ -6,7 +6,8 @@ class Fterm < Formula
   version '0.0.2a5'
 
   # skip_clean 'bin'
-  depends_on "zapcore"
+  depends_on "zpaq"
+  depends_on "openssl"
 
   def install
      bin.install 'f'
