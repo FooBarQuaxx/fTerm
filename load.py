@@ -1,19 +1,19 @@
 # NOTE: this use of eval is safe
 # pylint: disable-msg=W0123
 
-import main
+import lib
 
 verbs = {}
 synonyms = {}
 
-for item in dir(main):
+for item in dir(lib):
     if ("__" not in item) and (item != "os"):
-        package = eval("main.%s" % (item))
+        package = eval("lib.%s" % (item))
         for func in dir(package):
             if func == "synonyms":
-                synonyms.update(eval("main.%s.%s" % (item, func)))
+                synonyms.update(eval("lib.%s.%s" % (item, func)))
             elif ("__" not in func):
-                verbs[func.lower()] = eval("main.%s.%s" % (item, func))
+                verbs[func.lower()] = eval("lib.%s.%s" % (item, func))
 
 # filter out imports
 for item in verbs.keys():

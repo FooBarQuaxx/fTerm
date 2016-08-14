@@ -5,7 +5,6 @@ class Fterm < Formula
   url 'https://github.com/lschumm/homebrew-fTerm.git'
   version '0.0.2a5'
 
-  # skip_clean 'bin'
   depends_on "zpaq"
   depends_on "openssl"
 
@@ -13,13 +12,8 @@ class Fterm < Formula
      bin.install 'f'
      bin.install 'f-i'
      bin.install 'load.py'
-     bin.install 'core'
+     bin.install 'lib'
      puts "For the best experience, we recommend you use a terminal with auto-complete, such as fish (fish.sh) or zsh (zsh.org)."
      sleep(5)
-
-   #  bin.install 'brew-any-tap.rb'
-   #  bin.install 'brew-any-untap.rb'
-   #  (bin+'brew-any-tap.rb').chmod 0755
-   #  (bin+'brew-any-untap.rb').chmod 0755
   end
 end
