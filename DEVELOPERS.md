@@ -33,3 +33,22 @@ The fTerm project uses the PEP8 standard, through the [Pylint](https://www.pylin
 # NOTE: {{why you ignore this error}}
 # pylint: disable-msg={{id of error}}
 ```
+
+## Module docstrings
+Docstrings, which must be at the beginning of all program files, should be of the following format:
+```
+[{{name of package}}] {{name of file}}
+
+{{explanation of what the file does}}
+```
+
+*e.g.*, for the fTerm core file *parser.py*,
+```
+"""
+[fTerm] parser.py
+
+This module parses commands, interpreting them first with a synonym check (for
+any words that are synonymous with the word in question that are fTerm commands),
+and secondly with a difflib.get_close_matches check (in case of typos).
+"""
+```

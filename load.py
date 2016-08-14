@@ -1,3 +1,14 @@
+"""
+[fTerm] load.py
+
+This module parses commands, interpreting them first with a synonym check (for
+any words that are synonymous with the word in question that are fTerm commands),
+and secondly with a difflib.get_close_matches check (in case of typos).
+"""
+
+# NOTE: this is extraneous
+# pylint: disable-msg=C0103
+
 # NOTE: this use of eval is safe
 # pylint: disable-msg=W0123
 
@@ -12,11 +23,11 @@ for item in dir(lib):
         for func in dir(package):
             if func == "synonyms":
                 synonyms.update(eval("lib.%s.%s" % (item, func)))
-            elif ("__" not in func):
+            elif "__" not in func:
                 verbs[func.lower()] = eval("lib.%s.%s" % (item, func))
 
 # filter out imports
-for item in verbs.keys():
+for item in verbs:
     if item not in synonyms.values():
         del verbs[item]
 

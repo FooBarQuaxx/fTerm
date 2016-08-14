@@ -1,3 +1,9 @@
+"""
+[zapcore] zapcore.py
+
+This module contains all Zapcore commands for fTerm.
+"""
+
 # NOTE: this is extraneous
 # pylint: disable-msg=C0103
 

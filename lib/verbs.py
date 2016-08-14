@@ -1,3 +1,9 @@
+"""
+[fTerm] verbs.py
+
+This module defines all of the standard "verbs", or commands, for fTerm.
+"""
+
 # NOTE: this is extraneous
 # pylint: disable-msg=C0103
 
@@ -6,21 +12,21 @@ import subprocess
 
 
 synonyms = {
-            "files":"list",
-            "switch":"swap",
-            "exec":"run",
-            "execute":"run",
-            "space":"size",
-            "remove":"delete",
-            "annul":"delete",
-            "wipe":"delete",
-            "display":"read",
-            "write":"edit",
-            "compose":"edit",
-            "revise":"edit",
-            "commands":"commands", # there must be an entry
-            "assistance":"help",
-           }
+    "files":"list",
+    "switch":"swap",
+    "exec":"run",
+    "execute":"run",
+    "space":"size",
+    "remove":"delete",
+    "annul":"delete",
+    "wipe":"delete",
+    "display":"read",
+    "write":"edit",
+    "compose":"edit",
+    "revise":"edit",
+    "commands":"commands", # there must be an entry
+    "assistance":"help",
+    }
 
 #
 # DIRECTORY OPERATIONS
