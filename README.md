@@ -124,17 +124,21 @@ $ f
 [f-i] Please specify a command (e.g., f swap file1 file2)
 ```
 
+# Extending
+See (DEVELOPERS.md)[DEVELOPERS.md] for details.
+
+# Contributing
+The fTerm project uses (gitmagic.io)[https://gitmagic.io/] for pull requests. See the (contributing.json)[contributing.json] file for more information.
+
+
 # Notes
 - Install either the *zsh* or *fish* shell. Autocomplete is **awesome**.
-- fTerm currently does not have a `cd` command due to terminal session crud.
-
 
 # Authors
 
-* **Liam Schumm** - *Initial work* - [@lschumm](https://github.com/lschumm)
-* **Andy Merrill** - *Idea* - [@appleinventor](https://github.com/appleinventor)
-* **Jack Merrill** - *Development* - [@yoshifan509](https://github.com/yoshifan509)
-
+* **Liam Schumm** - *Lead Developer* - [@lschumm](https://github.com/lschumm)
+* **Andy Merrill** - *Idea + Developer* - [@appleinventor](https://github.com/appleinventor)
+* **Jack Merrill** - *Web Developer* - [@yoshifan509](https://github.com/yoshifan509)
 
 
 
