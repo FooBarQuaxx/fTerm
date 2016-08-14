@@ -1,4 +1,4 @@
-![fTerm](logo.png)
+![fTerm demo #2](demo.png)
 [![homebrew](https://img.shields.io/badge/homebrew-0.0.2a3-yellow.svg?style=flat-square)]()
 [![License (GPL version 3)](https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg?style=flat-square)](http://opensource.org/licenses/GPL-3.0)
 [![Awesome: true](https://img.shields.io/badge/awesome%20-yes-brightgreen.svg?style=flat-square)]()
@@ -15,27 +15,40 @@ To run *command* with arguments *a1, a2,...*, simply run
 f command a1, a2,...
 ```
 
+The fTerm interpreter will then attempt to interpret *command*.
+First it will check if it was defined as a synonym of another, defined, command, and then do a string-based (typo-preventing) search. It will then prompt you with
+
+```
+[f-i] interpreted_command a1, a2...
+```
+
+If you enter anything (except just pressing the return key), the command will not be run.
+
 ## Examples
 
 ```
-$ ls
+$ f list
+[f-i] list⏎
 a.txt
 b.rst
 c.mp4
 $ f remove b.rst
 [f-i] delete a⏎
-$ ls
+$ f list
+[f-i] list⏎
 a.txt
 c.mp4
 ```
 
 ```
-$ cat a
+$ f read a
+[f-i] read a⏎
 this is a test!
-$ cat b
+$ f read b
+[f-i] read b⏎
 this is also a test!
 $ f swap a b
-[f-i]⏎
+[f-i] swap a b⏎
 [f] Swapped a and b
 $ cat a
 this is also a test!
