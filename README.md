@@ -128,7 +128,7 @@ $ f
 See (DEVELOPERS.md)[DEVELOPERS.md] for details.
 
 # Contributing
-The fTerm project uses (gitmagic.io)[https://gitmagic.io/] for pull requests. See the (contributing.json)[contributing.json] file for more information.
+The fTerm project uses [gitmagic.io](https://gitmagic.io/) for pull requests. See the [contributing.json](contributing.json) file for more information.
 
 
 # Notes
