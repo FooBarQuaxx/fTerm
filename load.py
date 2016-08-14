@@ -27,9 +27,7 @@ for item in dir(lib):
                 verbs[func.lower()] = eval("lib.%s.%s" % (item, func))
 
 # filter out imports
-for item in verbs:
-    if item not in synonyms.values():
-        del verbs[item]
+verbs = {item:verbs[item] for item in verbs if item in synonyms.values()}
 
 def commands():
     """List all fTerm commands."""
