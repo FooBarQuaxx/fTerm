@@ -83,7 +83,7 @@ def edit(filename):
 
 def addline(filename, line):
     """Append *line* to *filename*."""
-    return 'echo %s >> %s;'
+    return 'echo %s >> %s;' % (filename, line)
 #
 # MISCELLANEOUS
 #
