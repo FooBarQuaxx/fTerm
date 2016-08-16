@@ -78,8 +78,8 @@ def move(filename, pos):
 
 
 def sort(directory, exp):
-    """'Takes a directory and either a regular expression, or a range of numbers
-    (e.g., 2:5). Sorts the directory based on '"""
+    """'Takes a directory *directory* and a regular expression *exp*. Sorts each file into a
+    folder with name equal to the match of *exp* in its filename.'"""
 
     call = ""
 
