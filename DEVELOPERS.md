@@ -26,6 +26,30 @@ synonyms = {"scribble":"edit",
 
 **NOTE THAT** all functions in a package must have an entry as a value in *synonyms*. If you do not wish to add any synonyms for function *func*, you can simply add the entry `"func":"func"` to *synonyms*.
 
+## functions
+Functions in fTerm are defined as functions that take arguments (fTerm will automatically parse the number of arguments), and that return strings of BASH commands, seperated by semicolons (and ending with one) For example,
+
+```
+def swap(file1, file2):
+    """A function that swaps the names of two files."""
+
+    call = ""
+
+    # make a temporary file
+    temp = subprocess.Popen(["mktemp"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "")
+
+    # move 1 to temp
+    call += "mv %s %s;" % (file1, temp)
+
+    # move 2 to 1
+    call += "mv %s %s;" % (file2, file1)
+
+    # move temp to 1
+    call += "mv %s %s;" % (temp, file2)
+
+    return call
+```
+
 # Style
 The fTerm project uses the PEP8 standard, through the [Pylint](https://www.pylint.org/) linter. However, in cases where PEP requests are extraneous or otherwise unreasonable, you may ignore them by adding, at the beginning of the file, after the docstring
 
