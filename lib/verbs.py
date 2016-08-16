@@ -14,6 +14,7 @@ import subprocess
 synonyms = {
     "files":"list",
     "switch":"swap",
+    "move":"relocate",
     "exec":"run",
     "execute":"run",
     "space":"size",
@@ -24,6 +25,7 @@ synonyms = {
     "write":"edit",
     "compose":"edit",
     "revise":"edit",
+    "append":"addline",
     "commands":"commands", # there must be an entry
     "assistance":"help",
     }
@@ -61,6 +63,11 @@ def delete(filename):
     """Delete a file or directory."""
     return 'rm -rf %s;' % (filename)
 
+
+def move(filename, pos):
+    """Move *filename* to folder *pos*."""
+    return "mv -r %s %s" % (filename, pos)
+
 #
 # EDITING FILES
 #
@@ -74,7 +81,9 @@ def edit(filename):
     """Edit a file."""
     return 'nano %s;' % (filename)
 
-
+def addline(filename, line):
+    """Append *line* to *filename*."""
+    return 'echo %s >> %s;'
 #
 # MISCELLANEOUS
 #
