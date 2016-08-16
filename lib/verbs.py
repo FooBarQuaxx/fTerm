@@ -10,11 +10,19 @@ This module defines all of the standard "verbs", or commands, for fTerm.
 # for running shell operations
 import subprocess
 
+# for sort
+import re
+
+# for reading files
+import os
+
 
 synonyms = {
     "files":"list",
     "switch":"swap",
     "move":"relocate",
+    "organize":"sort",
+    "organise":"sort",
     "exec":"run",
     "execute":"run",
     "space":"size",
@@ -68,6 +76,33 @@ def move(filename, pos):
     """Move *filename* to folder *pos*."""
     return "mv -r %s %s" % (filename, pos)
 
+
+def sort(directory, exp):
+    """'Takes a directory and either a regular expression, or a range of numbers
+    (e.g., 2:5). Sorts the directory based on '"""
+
+    call = ""
+
+    # files to sort
+    files = os.listdir(directory)
+
+    # make folders to sort
+    folders = [re.search(exp, x).group(0) for x in files]
+
+    # in case a directory name is the same as the name of a file
+    tempfiles = [subprocess.Popen(["mktemp", "-d"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "") for x in files]
+    for i in range(len(files)):
+        call += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
+
+    # create directories
+    for item in set(folders):
+        call += "mkdir %s;" % (item)
+
+    # do sorting
+    for i in range(len(files)):
+        call += "mv %s/%s %s/;" % (tempfiles[i], files[i], folders[i])
+
+    return call
 #
 # EDITING FILES
 #
@@ -84,6 +119,8 @@ def edit(filename):
 def addline(filename, line):
     """Append *line* to *filename*."""
     return 'echo %s >> %s;' % (filename, line)
+
+
 #
 # MISCELLANEOUS
 #
@@ -103,3 +140,7 @@ def run(filename):
 
     # run the file
     return command[ext] % (filename)
+
+def kill(processname):
+    """Kill the process with name *processname*."""
+    return "pkill %s" % (processname)
