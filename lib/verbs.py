@@ -73,7 +73,7 @@ def delete(filename):
 
 
 def move(filename, pos):
-    """Move *filename* to folder *pos*."""
+    """Move the file or folder at *path1* to *path2*."""
     return "mv -r %s %s" % (filename, pos)
 
 

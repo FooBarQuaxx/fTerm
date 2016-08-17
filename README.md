@@ -64,27 +64,33 @@ this is a test!
 ## swap *file1* *file2*
 A function that swaps the names of two files.
 
+## list
+List the files the current directory.
+
+## delete *name*
+Delete the file or directory *name*.
+
+## move *path1* *path2*
+Move the file or folder at *path1* to *path2*.
+
+## sort *directory* *exp*
+Takes a directory *directory* and a regular expression *exp*. Sorts each file into a
+folder with name equal to the match of *exp* in its filename.
+
 ## run *filename*
 A universal run function; runs *filename* based on its file extension.
 
 ## size *filename*
 Return the size of *filename* in human-readable format.
 
-
-## delete *name*
-Delete the file or directory *name*.
-
-
-## list
-List the files the current directory.
-
-
 ## read *filename*
 Read *filename*.
 
-
 ## edit *filename*
 Edit *filename*.
+
+## addline *filename* *line*
+Append *line* to file *filename*.
 
 ## commands
 List all fTerm commands.
@@ -139,7 +145,6 @@ The fTerm project uses [gitmagic.io](https://gitmagic.io/) for pull requests. Se
 * **Liam Schumm** - *Lead Developer* - [@lschumm](https://github.com/lschumm)
 * **Andy Merrill** - *Idea + Developer* - [@appleinventor](https://github.com/appleinventor)
 * **Jack Merrill** - *Web Developer* - [@yoshifan509](https://github.com/yoshifan509)
-
 
 
 #  License
