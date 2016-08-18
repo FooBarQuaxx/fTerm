@@ -19,7 +19,7 @@ f command a1, a2,...
 ```
 
 The fTerm interpreter will then attempt to interpret *command*.
-First it will check if it was defined as a synonym of another, defined, command, and then do a string-based (typo-preventing) search. It will then prompt you with
+First it will check if it was defined as a synonym of another, defined, command, and then do a string-based (typo-preventing) search. It will then prompt you with:
 
 ```
 [f-i] interpreted_command a1, a2...
