@@ -61,55 +61,51 @@ this is a test!
 
 # Commands
 
-## swap *file1* *file2*
-A function that swaps the names of two files.
+## list(*dirs)
+List the files in a directory.
 
-## list
-List the files the current directory.
+## addline(filename, line)
+Append *line* to *filename*.
 
-## delete *name*
-Delete the file or directory *name*.
+## delete(*files)
+Delete a file or directory.
 
-## move *path1* *path2*
+## edit(*files)
+Edit a file.
+
+## kill(*processes)
+Kill the process with name *processname*.
+
+## move(filename, pos)
 Move the file or folder at *path1* to *path2*.
 
-## sort *directory* *exp*
+## read(*files)
+Read a file.
+
+## run(*files)
+A universal run function.
+
+## size(*files)
+Return the size of a file in human-readable format.
+
+## sort(directory, exp)
 Takes a directory *directory* and a regular expression *exp*. Sorts each file into a
 folder with name equal to the match of *exp* in its filename.
 
-## run *filename*
-A universal run function; runs *filename* based on its file extension.
+## swap(file1, file2)
+A function that swaps the names of two files.
 
-## size *filename*
-Return the size of *filename* in human-readable format.
+## compress(filename)
+Compress a file.
 
-## read *filename*
-Read *filename*.
+## decompress(filename)
+Decompress a file.
 
-## edit *filename*
-Edit *filename*.
+## decrypt(filename)
+Decrypt a file.
 
-## addline *filename* *line*
-Append *line* to file *filename*.
-
-## commands
-List all fTerm commands.
-
-## help *command*
-Return the docstring of fTerm function *command*.
-
-## compress *filename*
-Compress *filename* using the [PXZ compression utility](https://jnovy.fedorapeople.org/pxz/).
-
-## decompress *filename*
-Decompress *filename*.
-
-## encrypt *filename*
-Encrypt *filename* using the [OpenSSL encryption utility](https://www.openssl.org/).
-
-## decompress *filename*
-Decrypt *filename*.
-
+## encrypt(filename)
+Encrypt a file.
 
 # Installing (Mac)
 
