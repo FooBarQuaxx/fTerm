@@ -25,6 +25,7 @@ synonyms = {
     "organise":"sort",
     "exec":"run",
     "execute":"run",
+    "evaluate":"run",
     "space":"size",
     "remove":"delete",
     "annul":"delete",
@@ -35,7 +36,8 @@ synonyms = {
     "revise":"edit",
     "append":"addline",
     "removeline":"removeline",
-    "commands":"commands", # there must be an entry
+    "end":"kill",
+    "commands":"commands",
     "assistance":"help",
     }
 

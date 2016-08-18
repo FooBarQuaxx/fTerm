@@ -123,21 +123,29 @@ swap(file1, file2)
 ------------------
 A function that swaps the names of two files.
 
-compress(\*filename)
+compress(\*files)
 ------------------
 Compress a file.
 
-decompress(\*filename)
+decompress(\*files)
 --------------------
 Decompress a file.
 
-decrypt(\*filename)
+decrypt(\*files)
 -----------------
 Decrypt a file.
 
-encrypt(\*filename)
------------------
+encrypt(\*files)
+----------------
 Encrypt a file.
+
+pack(*\files)
+-------------
+Pack a file/folder into a tar archive (no compression).
+
+unpack(*files)
+--------------
+Unpack a tar archive into a file/folder.
 
 ================
 Installing (Mac)

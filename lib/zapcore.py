@@ -14,6 +14,8 @@ synonyms = {
             "lock":"encrypt",
             "unlock":"decrypt",
             "decode":"decrypt",
+            "pack":"pack",
+            "unpack":"unpack",
            }
 
 #
@@ -22,16 +24,36 @@ synonyms = {
 
 def compress(*files):
     """Compress a file."""
-    return "zpaq add %s.zpaq %s -m 5 -summary;" * len(files)  % (filename, filename) * len(files)
+    return "pxz -v -5 %s;" % (' '.join(files))
 
 def decompress(*files):
     """Decompress a file."""
-    return "zpaq extract %s;" * len(files) % (filename) * len(files)
+    return "unxz %s;" % (' '.join(files))
 
 def encrypt(*files):
     """Encrypt a file."""
-    return " openssl enc -aes-256-cbc -salt -in %s -out %s.enc;" * len(files) % (filename, filename) * len(files)
+    call = ""
+    for f in files:
+        call += "echo %s:; openssl enc -aes-256-cbc -salt -in %s -out %s.enc; rm %s;" % (f, f, f, f)
+    return call
 
 def decrypt(*files):
     """Decrypt a file."""
-    return "openssl aes-256-cbc -d -salt -in %s -out %s;" * len(files) % (filename, filename[:-5]) * len(files)
+    call = ""
+    for f in files:
+        call += "echo %s:; openssl aes-256-cbc -d -salt -in %s -out %s; rm %s;" % (f, f, f[:-4], f)
+    return call
+
+def pack(*files):
+    """Pack a file/folder into a tar archive (no compression)."""
+    call = ""
+    for f in files:
+        return "tar cf %s.tar %s; rm -rf %s;" % (f, f, f)
+    return call
+
+def unpack(*files):
+    """Unpack a tar archive into a file/folder."""
+    call = ""
+    for f in files:
+        return "tar xf %s %s; rm %s;" % (f, f[:-4], f)
+    return call
