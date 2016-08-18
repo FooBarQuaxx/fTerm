@@ -42,9 +42,9 @@ synonyms = {
 # DIRECTORY OPERATIONS
 #
 
-def List(): # name capitalised for no name conflict
+def List(*dirs): # name capitalised for no name conflict
     """List the files in a directory."""
-    return "ls;"
+    return "ls %s;" % (' '.join(dirs))
 
 
 def swap(file1, file2):
@@ -67,9 +67,9 @@ def swap(file1, file2):
     return call
 
 
-def delete(filename):
+def delete(*files):
     """Delete a file or directory."""
-    return 'rm -rf %s;' % (filename)
+    return 'rm -rf %s;' * len(files) % tuple(files)
 
 
 def move(filename, pos):
@@ -103,18 +103,20 @@ def sort(directory, exp):
         call += "mv %s/%s %s/;" % (tempfiles[i], files[i], folders[i])
 
     return call
+
+
 #
 # EDITING FILES
 #
 
-def read(filename):
+
+def read(*files):
     """Read a file."""
-    return 'cat %s;' % (filename)
+    return 'cat %s;' * len(files) % (files)
 
-
-def edit(filename):
+def edit(*files):
     """Edit a file."""
-    return 'nano %s;' % (filename)
+    return 'nano %s;' * len(files) % tuple(filenames)
 
 def addline(filename, line):
     """Append *line* to *filename*."""
@@ -125,22 +127,20 @@ def addline(filename, line):
 # MISCELLANEOUS
 #
 
-def size(filename):
-    """Return the size of a file in human-readable format."""
-    return 'echo [f] File size: $(echo %s | awk -F " " {\'print $5\'});' % (filename)
 
-def run(filename):
+def size(*files):
+    """Return the size of a file in human-readable format."""
+    return '(files) echo [f] File size: $(echo %s | awk -F " " {\'print $5\'});' % (filename)
+
+def run(*files):
     """A universal run function."""
 
     # filter filename to appropriate command
     command = {"py" : "python %s;", "rb" : "ruby %s;", "sh" : "sh %s;", "pl" : "perl %s;"}
 
-    # get file extension
-    ext = filename.split(".")[1]
+    # run the files
+    return ''.join([command[x.split(".")[1]] % x for x in files])
 
-    # run the file
-    return command[ext] % (filename)
-
-def kill(processname):
+def kill(*processes):
     """Kill the process with name *processname*."""
-    return "pkill %s" % (processname)
+    return "pkill %s" * len(processes) % tuple(processes)
