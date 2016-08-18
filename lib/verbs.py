@@ -34,6 +34,7 @@ synonyms = {
     "compose":"edit",
     "revise":"edit",
     "append":"addline",
+    "removeline":"removeline",
     "commands":"commands", # there must be an entry
     "assistance":"help",
     }
@@ -116,12 +117,20 @@ def read(*files):
 
 def edit(*files):
     """Edit a file."""
-    return 'nano %s;' * len(files) % tuple(filenames)
+    return 'nano %s;' * len(files) % tuple(files)
 
 def addline(filename, line):
     """Append *line* to *filename*."""
     return 'echo %s >> %s;' % (filename, line)
 
+def removeline(filename,line):
+    """Remove *line* from file *filename*."""
+
+    data = open(filename, "r").readlines()
+
+    del data[int(line)]
+        
+    return "rm %s; echo '%s' >> %s;" % (filename, ''.join(data), filename)
 
 #
 # MISCELLANEOUS

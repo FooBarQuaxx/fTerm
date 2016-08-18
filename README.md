@@ -1,3 +1,4 @@
+
 #fTerm
 
 ![fTerm demo #2](demo.png)
@@ -66,6 +67,9 @@ List the files in a directory.
 
 ## addline(filename, line)
 Append *line* to *filename*.
+
+## removeline(filename, line)
+Remove *line* from file *filename*.
 
 ## delete(*files)
 Delete a file or directory.
