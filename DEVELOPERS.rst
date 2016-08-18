@@ -1,5 +1,5 @@
 ********************
-developing for fTerm
+Developing for fTerm
 ********************
 
 ========
@@ -18,7 +18,8 @@ Each file installed contains functions. fTerm automatically reads the number of 
 ^^^^^^^^^^^^^^^
 Synonyms is a dictionary containing alternate names for functions. The key/value pairs contain the alternate names mapping to the original names. For example, if you wanted to add "write" and "scribble" synonyms to the function "edit":
 
-.. code::
+.. code:: python
+
    synonyms = {"scribble":"edit",
                "write":"edit",
                .
@@ -32,7 +33,8 @@ functions
 ^^^^^^^^^
 Functions in fTerm are defined as functions that take arguments (fTerm will automatically parse the number of arguments), and that return strings of BASH commands, seperated by semicolons (and ending with one) For example,
 
-.. code::
+.. code:: python
+
    def swap(file1, file2):
        """A function that swaps the names of two files."""
 
@@ -58,7 +60,8 @@ Style
 =====
 The fTerm project uses the PEP8 standard, through the [Pylint](https://www.pylint.org/) linter. However, in cases where PEP requests are extraneous or otherwise unreasonable, you may ignore them by adding, at the beginning of the file, after the docstring
 
-.. code:
+.. code: python
+
    # NOTE: {{why you ignore this error}}
    # pylint: disable-msg={{id of error}}
 
@@ -66,7 +69,8 @@ The fTerm project uses the PEP8 standard, through the [Pylint](https://www.pylin
 ## Module docstrings
 Docstrings, which must be at the beginning of all program files, should be of the following format:
 
-.. code::
+.. code:: python
+
    [{{name of package}}] {{name of file}}
 
    {{explanation of what the file does}}
@@ -74,11 +78,11 @@ Docstrings, which must be at the beginning of all program files, should be of th
 
 *e.g.*, for the fTerm core file *parser.py*,
 
-.. code::
+.. code:: python
+
    """
    [fTerm] parser.py
 
    This module parses commands, interpreting them first with a synonym check (for
    any words that are synonymous with the word in question that are fTerm commands),
    and secondly with a difflib.get_close_matches check (in case of typos).
-   """

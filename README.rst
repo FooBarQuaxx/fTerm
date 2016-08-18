@@ -22,14 +22,16 @@ How-To
 ======
 To run *command* with arguments *a1, a2,...*, simply run
 
-.. code::
+.. code:: bash
+
    f command a1, a2,...
 
 
 The fTerm interpreter will then attempt to interpret *command*.
 First it will check if it was defined as a synonym of another, defined, command, and then do a string-based (typo-preventing) search. It will then prompt you with
 
-.. code::
+.. code:: bash
+
    [f-i] interpreted_command a1, a2...
 
 
@@ -39,7 +41,8 @@ If you enter anything (except just pressing the return key), the command will no
 Examples
 ========
 
-.. code::
+.. code:: bash
+
    $ f list
    [f-i] list⏎
    a.txt
@@ -52,7 +55,8 @@ Examples
    a.txt
    c.mp4
 
-.. code::
+.. code:: bash
+
    $ f read a
    [f-i] read a⏎
    this is a test!
@@ -71,8 +75,8 @@ Examples
 Commands
 ========
 
-list(*dirs)
------------
+list(\*dirs)
+------------
 List the files in a directory.
 
 adddline(filename, line)
@@ -83,32 +87,32 @@ removeline(filename, line)
 --------------------------
 Remove *line* from file *filename*.
 
-delete(*files)
---------------
+delete(\*files)
+---------------
 Delete a file or directory.
 
-edit(*files)
-------------
+edit(\*files)
+-------------
 Edit a file.
 
-kill(*processes)
-----------------
+kill(\*processes)
+-----------------
 Kill the process with name *processname*.
 
 move(filename, pos)
 -------------------
 Move the file or folder at *path1* to *path2*.
 
-read(*files)
-------------
+read(\*files)
+-------------
 Read a file.
 
-run(*files)
------------
+run(\*files)
+------------
 A universal run function.
 
-size(*files)
-------------
+size(\*files)
+-------------
 Return the size of a file in human-readable format.
 
 sort(directory, exp)
@@ -140,33 +144,39 @@ Installing (Mac)
 ================
 First, run
 
-.. code::
+.. code:: bash
+
    brew tap lschumm/tap
 
 and then
 
-.. code::
+.. code:: bash
+
    brew install fterm
 
 fTerm is now installed! Verify your installation by running:
 
-.. code::
+.. code:: bash
+
    $ f
    [f-i] Please specify a command (e.g., f swap file1 file2)
 
+=========
 Extending
 =========
-See (DEVELOPERS.md)[DEVELOPERS.md] for details.
+See `DEVELOPERS.rst <DEVELOPERS.rst>`_ for details.
 
+============
 Contributing
 ============
 The fTerm project uses [gitmagic.io](https://gitmagic.io/) for pull requests. See the [contributing.json](contributing.json) file for more information.
 
-
+=====
 Notes
 =====
 - Install either the *zsh* or *fish* shell. Autocomplete is **awesome**.
 
+=======
 Authors
 =======
 - **Liam Schumm** - *Lead Developer* - [@lschumm](https://github.com/lschumm)
