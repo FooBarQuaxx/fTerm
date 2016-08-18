@@ -113,7 +113,7 @@ def sort(directory, exp):
 
 def read(*files):
     """Read a file."""
-    return 'cat %s;' * len(files) % (files)
+    return 'cat %s;' % tuple(files)
 
 def edit(*files):
     """Edit a file."""
@@ -129,7 +129,7 @@ def removeline(filename,line):
     data = open(filename, "r").readlines()
 
     del data[int(line)]
-        
+
     return "rm %s; echo '%s' >> %s;" % (filename, ''.join(data), filename)
 
 #
@@ -139,7 +139,7 @@ def removeline(filename,line):
 
 def size(*files):
     """Return the size of a file in human-readable format."""
-    return '(files) echo [f] File size: $(echo %s | awk -F " " {\'print $5\'});' % (filename)
+    return 'echo [f] Size of %s: $(echo %s | awk -F " " {\'print $5\'});' * len(files) % tuple(files*2)
 
 def run(*files):
     """A universal run function."""
@@ -152,4 +152,4 @@ def run(*files):
 
 def kill(*processes):
     """Kill the process with name *processname*."""
-    return "pkill %s" * len(processes) % tuple(processes)
+    return "pkill %s;" * len(processes) % tuple(processes)
