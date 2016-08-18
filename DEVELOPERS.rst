@@ -86,3 +86,4 @@ Docstrings, which must be at the beginning of all program files, should be of th
    This module parses commands, interpreting them first with a synonym check (for
    any words that are synonymous with the word in question that are fTerm commands),
    and secondly with a difflib.get_close_matches check (in case of typos).
+   """

@@ -123,19 +123,19 @@ swap(file1, file2)
 ------------------
 A function that swaps the names of two files.
 
-compress(filename)
+compress(\*filename)
 ------------------
 Compress a file.
 
-decompress(filename)
+decompress(\*filename)
 --------------------
 Decompress a file.
 
-decrypt(filename)
+decrypt(\*filename)
 -----------------
 Decrypt a file.
 
-encrypt(filename)
+encrypt(\*filename)
 -----------------
 Encrypt a file.
 
