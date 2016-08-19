@@ -44,7 +44,7 @@ synonyms = {
 #
 # DIRECTORY OPERATIONS
 #
-
+ 
 def List(*dirs): # name capitalised for no name conflict
     """List the files in a directory."""
     return "ls %s;" % (' '.join(dirs))
@@ -56,16 +56,16 @@ def swap(file1, file2):
     call = ""
 
     # make a temporary file
-    temp = subprocess.Popen(["mktemp"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "")
+    temp = subprocess.Popen(["mktemp", "-d"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "")
 
     # move 1 to temp
-    call += "mv %s %s;" % (file1, temp)
+    call += "mv %s %s/;" % (file1, temp)
 
     # move 2 to 1
     call += "mv %s %s;" % (file2, file1)
 
     # move temp to 1
-    call += "mv %s %s;" % (temp, file2)
+    call += "mv %s/%s %s;" % (temp, file1, file2)
 
     return call
 
