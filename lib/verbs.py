@@ -141,8 +141,8 @@ def removeline(filename,line):
 
 def size(*files):
     """Return the size of a file in human-readable format."""
-    return 'echo [f] Size of %s: $(echo %s | awk -F " " {\'print $5\'});' * len(files) % tuple(files*2)
-
+    return "du -sh %s;" * len(files) % files
+        
 def run(*files):
     """A universal run function."""
 
