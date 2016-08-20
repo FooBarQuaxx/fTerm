@@ -123,16 +123,19 @@ def edit(*files):
 
 def addline(filename, line):
     """Append *line* to *filename*."""
-    return 'echo %s >> %s;' % (filename, line)
+    return 'echo %s >> %s;' % (line, filename)
 
-def removeline(filename,line):
+def removeline(filename, line):
     """Remove *line* from file *filename*."""
 
-    data = open(filename, "r").readlines()
+    data = open(filename.replace("\\", ""), "r").readlines()
 
     del data[int(line)]
 
-    return "rm %s; echo '%s' >> %s;" % (filename, ''.join(data), filename)
+    open(filename.replace("\\",""), "w").writelines(data)
+
+    return ":;"
+
 
 #
 # MISCELLANEOUS
@@ -150,7 +153,7 @@ def run(*files):
     command = {"py" : "python %s;", "rb" : "ruby %s;", "sh" : "sh %s;", "pl" : "perl %s;"}
 
     # run the files
-    return ''.join([command[x.split(".")[1]] % x for x in files])
+    return ''.join(["echo %s:;" % (x) + command.setdefault(x.split(".")[1], "echo '[f-i] Filetype %s not recognized';") % (x) for x in files])
 
 def kill(*processes):
     """Kill the process with name *processname*."""
