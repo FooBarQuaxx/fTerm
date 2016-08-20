@@ -20,7 +20,7 @@ import os
 synonyms = {
     "files":"list",
     "switch":"swap",
-    "move":"relocate",
+    "relocate":"move",
     "organize":"sort",
     "organise":"sort",
     "exec":"run",
@@ -77,7 +77,7 @@ def delete(*files):
 
 def move(filename, pos):
     """Move the file or folder at *path1* to *path2*."""
-    return "mv -r %s %s" % (filename, pos)
+    return "mv %s %s;" % (filename, pos)
 
 
 def sort(directory, exp):
