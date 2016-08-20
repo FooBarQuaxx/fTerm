@@ -12,7 +12,11 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 # NOTE: this use of eval is safe
 # pylint: disable-msg=W0123
 
+# import all commands
 import lib
+
+# for getting arg names
+from inspect import getargspec
 
 verbs = {}
 synonyms = {}
@@ -29,13 +33,27 @@ for item in dir(lib):
 # filter out imports
 verbs = {item:verbs[item] for item in verbs if item in synonyms.values()}
 
+
 def commands():
-    """List all fTerm commands."""
+    """List all fTerm commands, tabulated."""
 
-    call = ""
-
+    call  = ""
+    
     for verb in verbs:
-        call += "echo %s : %s;" % (verb, verbs[verb].__doc__)
+        # display args nicely
+        prettyprintargs = ''
+        argspec = getargspec(verbs[verb])
+
+        
+        # if there are args
+        if argspec.args != []:
+            prettyprintargs = ', '.join(argspec.args)
+
+        # if there are varargs
+        if argspec.varargs != None:
+            prettyprintargs += (", " if argspec.args != [] else "") + "*%s" % argspec.varargs
+
+        call += "echo '%s (%s) : %s';" %  (verb, prettyprintargs, verbs[verb].__doc__)
 
     return call
 

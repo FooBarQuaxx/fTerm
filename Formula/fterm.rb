@@ -5,7 +5,8 @@ class Fterm < Formula
   url 'https://github.com/lschumm/homebrew-fTerm.git'
   version '0.0.2a5'
 
-  depends_on "zpaq"
+  depends_on "xz"
+  depends_on "pxz"
   depends_on "openssl"
 
   def install

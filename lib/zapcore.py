@@ -14,24 +14,46 @@ synonyms = {
             "lock":"encrypt",
             "unlock":"decrypt",
             "decode":"decrypt",
+            "pack":"pack",
+            "unpack":"unpack",
            }
 
 #
 # ZAPCORE (github.com/lschumm/zapcore)
 #
 
-def compress(filename):
+def compress(*files):
     """Compress a file."""
-    return "zpaq add %s.zpaq %s -m 5 -summary;" % (filename, filename)
+    return "pxz -v -5 %s;" % (' '.join(files))
 
-def decompress(filename):
+def decompress(*files):
     """Decompress a file."""
-    return "zpaq extract %s;" % (filename)
+    return "unxz %s;" % (' '.join(files))
 
-def encrypt(filename):
+def encrypt(*files):
     """Encrypt a file."""
-    return " openssl enc -aes-256-cbc -salt -in %s -out %s.enc;" % (filename, filename)
+    call = ""
+    for f in files:
+        call += "echo %s:; openssl enc -aes-256-cbc -salt -in %s -out %s.enc; rm %s;" % (f, f, f, f)
+    return call
 
-def decrypt(filename):
+def decrypt(*files):
     """Decrypt a file."""
-    return "openssl aes-256-cbc -d -salt -in %s -out %s;" % (filename, filename[:-5])
+    call = ""
+    for f in files:
+        call += "echo %s:; openssl aes-256-cbc -d -salt -in %s -out %s; rm %s;" % (f, f, f[:-4], f)
+    return call
+
+def pack(*files):
+    """Pack a file/folder into a tar archive (no compression)."""
+    call = ""
+    for f in files:
+        return "tar cf %s.tar %s; rm -rf %s;" % (f, f, f)
+    return call
+
+def unpack(*files):
+    """Unpack a tar archive into a file/folder."""
+    call = ""
+    for f in files:
+        return "tar xf %s %s; rm %s;" % (f, f[:-4], f)
+    return call

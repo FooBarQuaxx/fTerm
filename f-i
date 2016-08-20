@@ -41,16 +41,11 @@ def run():
         except IndexError:
             print "echo '[f-i] Invalid function %s';" % (argv[1]),
             return
-
-        # ensure that the correct number of arguments are being passed
-        if argnum - 2 != f.func_code.co_argcount:
-            print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
-        else:
-            # args = map(shellquote, argv[2:])
-            #args = [parser.nounParse(x) for x in argv[2:]]
-            args = argv[2:]
-            suggestion += " " + " ".join(args)
+        args = [x.replace(" ","\\ ") for x in argv[2:]]
+        suggestion += " " + " ".join(args)
+        try:
             print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then %s fi" % (suggestion, f(*args))
-            # print f(*args),
+        except TypeError:
+            print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
 
 run()

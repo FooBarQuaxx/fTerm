@@ -19,7 +19,7 @@ f command a1, a2,...
 ```
 
 The fTerm interpreter will then attempt to interpret *command*.
-First it will check if it was defined as a synonym of another, defined, command, and then do a string-based (typo-preventing) search. It will then prompt you with
+First it will check if it was defined as a synonym of another, defined, command, and then do a string-based (typo-preventing) search. It will then prompt you with:
 
 ```
 [f-i] interpreted_command a1, a2...
@@ -61,49 +61,51 @@ this is a test!
 
 # Commands
 
-## swap *file1* *file2*
+## list(*dirs)
+List the files in a directory.
+
+## addline(filename, line)
+Append *line* to *filename*.
+
+## delete(*files)
+Delete a file or directory.
+
+## edit(*files)
+Edit a file.
+
+## kill(*processes)
+Kill the process with name *processname*.
+
+## move(filename, pos)
+Move the file or folder at *path1* to *path2*.
+
+## read(*files)
+Read a file.
+
+## run(*files)
+A universal run function.
+
+## size(*files)
+Return the size of a file in human-readable format.
+
+## sort(directory, exp)
+Takes a directory *directory* and a regular expression *exp*. Sorts each file into a
+folder with name equal to the match of *exp* in its filename.
+
+## swap(file1, file2)
 A function that swaps the names of two files.
 
-## run *filename*
-A universal run function; runs *filename* based on its file extension.
+## compress(filename)
+Compress a file.
 
-## size *filename*
-Return the size of *filename* in human-readable format.
+## decompress(filename)
+Decompress a file.
 
+## decrypt(filename)
+Decrypt a file.
 
-## delete *name*
-Delete the file or directory *name*.
-
-
-## list
-List the files the current directory.
-
-
-## read *filename*
-Read *filename*.
-
-
-## edit *filename*
-Edit *filename*.
-
-## commands
-List all fTerm commands.
-
-## help *command*
-Return the docstring of fTerm function *command*.
-
-## compress *filename*
-Compress *filename* using the [PXZ compression utility](https://jnovy.fedorapeople.org/pxz/).
-
-## decompress *filename*
-Decompress *filename*.
-
-## encrypt *filename*
-Encrypt *filename* using the [OpenSSL encryption utility](https://www.openssl.org/).
-
-## decompress *filename*
-Decrypt *filename*.
-
+## encrypt(filename)
+Encrypt a file.
 
 # Installing (Mac)
 
@@ -139,7 +141,6 @@ The fTerm project uses [gitmagic.io](https://gitmagic.io/) for pull requests. Se
 * **Liam Schumm** - *Lead Developer* - [@lschumm](https://github.com/lschumm)
 * **Andy Merrill** - *Idea + Developer* - [@appleinventor](https://github.com/appleinventor)
 * **Jack Merrill** - *Web Developer* - [@yoshifan509](https://github.com/yoshifan509)
-
 
 
 #  License
