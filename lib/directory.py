@@ -19,13 +19,36 @@ import os
 
 synonyms = {
     "files":"list",
+    "contents":"list",
+    "index":"list",
+    "manifest":"list",
+    "contents":"list",
+    "menu":"list",
+    "directory":"list",
+    
     "switch":"swap",
+    "trade":"swap",
+    "interchange":"swap",
+    "change":"swap",
+    "swop":"swap",
+    "exchange":"swap",
+    "interchange":"swap",
+
     "remove":"delete",
     "annul":"delete",
     "wipe":"delete",
+
     "relocate":"move",
+    "displace":"move",
+    
+    "duplicate":"copy",
+    "xerox":"copy",
+    "replicate":"copy",
+
     "organize":"sort",
     "organise":"sort",
+    "reorganize":"sort",
+    "reorganise":"sort",
     }
 
 
@@ -65,6 +88,11 @@ def move(filename, pos):
     """Move the file or folder at *path1* to *path2*."""
     return "mv %s %s;" % (filename, pos)
 
+
+def copy(filename, pos):
+    """Copy the file or folder at *path1* to *path2*."""
+    return "cp %s %s;" % (filename, pos)
+    
 
 def sort(directory, exp):
     """Takes a directory *directory* and a regular expression *exp*. Sorts each file into a
