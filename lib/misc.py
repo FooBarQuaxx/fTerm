@@ -1,7 +1,7 @@
 """
-[fTerm] verbs.py
+[fTerm] misc.py
 
-This module defines all of the standard "verbs", or commands, for fTerm.
+This module defines some miscellaneous commands for fTerm.
 """
 
 # NOTE: this is extraneous
