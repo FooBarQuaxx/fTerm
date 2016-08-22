@@ -5,18 +5,18 @@ This module contains all Zapcore commands for fTerm.
 """
 
 # NOTE: this is extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103,C0303,C0330
 
 synonyms = {
             "crush":"compress",
             "compact":"compress",
             "pressurise":"compress",
             "pressurize":"compress",
-    
+
             "depressurise":"decompress",
             "depressurize":"decompress",
             "expand":"decompress",
-    
+
             "secure":"encrypt",
             "lock":"encrypt",
             "cipher":"encrypt",
@@ -28,7 +28,6 @@ synonyms = {
             "decipher":"decrypt",
             "decypher":"decrypt",
             "unlock":"decrypt",
-            "decode":"decrypt",
 
             "containerize":"pack",
             "containerise":"pack",
@@ -36,13 +35,12 @@ synonyms = {
             "bundle":"pack",
             "stow":"pack",
             "incase":"pack",
-            "encase":"pack",
             "shut":"pack",
-    
-            
+
+
             "unpack":"unpack",
             "decontainerize":"unpack",
-            "decontainerise":"unpack", 
+            "decontainerise":"unpack",
            }
 
 #

@@ -5,7 +5,7 @@ This module defines all of the standard file operations of fTerm.
 """
 
 # NOTE: this is extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103,C0303
 
 
 synonyms = {

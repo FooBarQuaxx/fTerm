@@ -5,7 +5,7 @@ This module defines all of the standard directory operations of fTerm.
 """
 
 # NOTE: this is extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103,C0303
 
 # for running shell operations
 import subprocess
@@ -22,17 +22,15 @@ synonyms = {
     "contents":"list",
     "index":"list",
     "manifest":"list",
-    "contents":"list",
     "menu":"list",
     "directory":"list",
-    
+
     "switch":"swap",
     "trade":"swap",
     "interchange":"swap",
     "change":"swap",
     "swop":"swap",
     "exchange":"swap",
-    "interchange":"swap",
 
     "remove":"delete",
     "annul":"delete",
@@ -40,7 +38,7 @@ synonyms = {
 
     "relocate":"move",
     "displace":"move",
-    
+
     "duplicate":"copy",
     "xerox":"copy",
     "replicate":"copy",
@@ -92,7 +90,7 @@ def move(filename, pos):
 def copy(filename, pos):
     """Copy the file or folder at *path1* to *path2*."""
     return "cp %s %s;" % (filename, pos)
-    
+
 
 def sort(directory, exp):
     """Takes a directory *directory* and a regular expression *exp*. Sorts each file into a
