@@ -25,9 +25,12 @@ def parse(word):
     elif word in synonyms:
         return synonyms[word]
     else:
-        lookup = get_close_matches(word, verbs.keys())
+        lookup = get_close_matches(word, verbs.keys() + synonyms.keys())
         if len(lookup) == 0:
             # there aren't any reasonable matches
             raise KeyError
         else:
-            return lookup[0]
+            if lookup[0] in synonyms:
+                return synonyms[lookup[0]]
+            else:
+                return lookup[0]

@@ -9,13 +9,40 @@ This module contains all Zapcore commands for fTerm.
 
 synonyms = {
             "crush":"compress",
+            "compact":"compress",
+            "pressurise":"compress",
+            "pressurize":"compress",
+    
+            "depressurise":"decompress",
+            "depressurize":"decompress",
             "expand":"decompress",
+    
             "secure":"encrypt",
             "lock":"encrypt",
+            "cipher":"encrypt",
+            "cypher":"encrypt",
+            "code":"encrypt",
+            "encode":"emcrypt",
+
+            "decode":"decrypt",
+            "decipher":"decrypt",
+            "decypher":"decrypt",
             "unlock":"decrypt",
             "decode":"decrypt",
-            "pack":"pack",
+
+            "containerize":"pack",
+            "containerise":"pack",
+            "encase":"pack",
+            "bundle":"pack",
+            "stow":"pack",
+            "incase":"pack",
+            "encase":"pack",
+            "shut":"pack",
+    
+            
             "unpack":"unpack",
+            "decontainerize":"unpack",
+            "decontainerise":"unpack", 
            }
 
 #
