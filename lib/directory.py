@@ -47,6 +47,10 @@ synonyms = {
     "organise":"sort",
     "reorganize":"sort",
     "reorganise":"sort",
+
+    "dir":"where",
+    "folder":"where",
+    ""
     }
 
 
@@ -120,3 +124,8 @@ def sort(directory, exp):
         call += "mv %s/%s %s/;" % (tempfiles[i], files[i], folders[i])
 
     return call
+
+def where():
+    """For the shells that don't have a path string"""
+    # TODO: Might be useful in a possible electron version? Scripting also. idk i was bored.
+    return 'echo "You are in "; pwd'

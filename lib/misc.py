@@ -13,6 +13,7 @@ synonyms = {
     "execute":"run",
     "evaluate":"run",
     "end":"kill",
+    "man":"rtfm"
     }
 
 def size(*files):
@@ -34,3 +35,7 @@ def run(*files):
 def kill(*processes):
     """Kill the process with name *processname*."""
     return "pkill %s;" * len(processes) % tuple(processes)
+
+def rtfm(manpage):
+    """Fun shortcut to man"""
+    return "man %s" % manpage
