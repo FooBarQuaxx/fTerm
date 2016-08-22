@@ -37,5 +37,5 @@ def kill(*processes):
     return "pkill %s;" * len(processes) % tuple(processes)
 
 def rtfm(*manpages):
-    """Fun shortcut to man"""
+    """Fun shortcut to man."""
     return "man %s;" % " ".join(manpages)
