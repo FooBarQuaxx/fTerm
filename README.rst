@@ -123,6 +123,10 @@ swap(file1, file2)
 ------------------
 A function that swaps the names of two files.
 
+where()
+-------
+(For shells that don't have a path string) show the current directory.
+
 compress(\*files)
 ------------------
 Compress a file.
@@ -146,6 +150,11 @@ Pack a file/folder into a tar archive (no compression).
 unpack(*files)
 --------------
 Unpack a tar archive into a file/folder.
+
+rtfm(*manpages)
+---------------
+Fun shortcut to man.
+
 
 ================
 Installing (Mac)

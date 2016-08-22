@@ -36,6 +36,6 @@ def kill(*processes):
     """Kill the process with name *processname*."""
     return "pkill %s;" * len(processes) % tuple(processes)
 
-def rtfm(manpage):
+def rtfm(*manpages):
     """Fun shortcut to man"""
-    return "man %s" % manpage
+    return "man %s;" % " ".join(manpages)

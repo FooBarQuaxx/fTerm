@@ -49,8 +49,7 @@ synonyms = {
     "reorganise":"sort",
 
     "dir":"where",
-    "folder":"where",
-    ""
+    "folder":"where", 
     }
 
 
@@ -126,6 +125,6 @@ def sort(directory, exp):
     return call
 
 def where():
-    """For the shells that don't have a path string"""
+    """(For shells that don't have a path string) show the current directory."""
     # TODO: Might be useful in a possible electron version? Scripting also. idk i was bored.
-    return 'echo "You are in "; pwd'
+    return 'echo "You are in "; pwd;'
