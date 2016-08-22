@@ -5,7 +5,7 @@ This module defines all of the standard "verbs", or commands, for fTerm.
 """
 
 # NOTE: this is extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103,C0303
 
 # for running shell operations
 import subprocess
@@ -44,7 +44,7 @@ synonyms = {
 #
 # DIRECTORY OPERATIONS
 #
- 
+
 def List(*dirs): # name capitalised for no name conflict
     """List the files in a directory."""
     return "ls %s;" % (' '.join(dirs))
@@ -132,7 +132,7 @@ def removeline(filename, line):
 
     del data[int(line)]
 
-    open(filename.replace("\\",""), "w").writelines(data)
+    open(filename.replace("\\", ""), "w").writelines(data)
 
     return ":;"
 
@@ -145,7 +145,7 @@ def removeline(filename, line):
 def size(*files):
     """Return the size of a file in human-readable format."""
     return "du -sh %s;" * len(files) % files
-        
+
 def run(*files):
     """A universal run function."""
 
