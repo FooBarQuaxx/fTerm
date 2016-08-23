@@ -16,7 +16,7 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 import lib
 
 # for getting arg names
-from inspect import getargspec
+from inspect import formatargspec, getargspec
 
 verbs = {}
 synonyms = {}
@@ -40,23 +40,11 @@ def commands():
     call  = ""
     
     for verb in verbs:
-        # display args nicely
-        prettyprintargs = ''
-        argspec = getargspec(verbs[verb])
-
-        
-        # if there are args
-        if argspec.args != []:
-            prettyprintargs = ', '.join(argspec.args)
-
-        # if there are varargs
-        if argspec.varargs != None:
-            prettyprintargs += (", " if argspec.args != [] else "") + "*%s" % argspec.varargs
-
-        call += "echo '%s (%s) : %s';" %  (verb, prettyprintargs, verbs[verb].__doc__)
-
+        args = formatargspec(*getargspec(verbs[verb]));
+        call += "echo '%s %s : %s';" %  (verb, args, verbs[verb].__doc__)
+ 
     return call
-
+        
 verbs["commands"] = commands
 
  # define our help function on current getFunc

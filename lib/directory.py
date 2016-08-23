@@ -49,7 +49,10 @@ synonyms = {
     "reorganise":"sort",
 
     "dir":"where",
-    "folder":"where", 
+    "folder":"where",
+
+    "find":"whereis",
+    "locate":"whereis",
     }
 
 
@@ -125,6 +128,24 @@ def sort(directory, exp):
     return call
 
 def where():
-    """(For shells that don't have a path string) show the current directory."""
+    """(For shells that do not have a path string) show the current directory."""
     # TODO: Might be useful in a possible electron version? Scripting also. idk i was bored.
     return 'echo "You are in "; pwd;'
+
+# NOTE: this is named whereis to not conflict with string.find() 
+def whereis(directory, exp, func=""):
+    """Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files."""
+
+    call = ""
+    
+    pattern = re.compile(exp)
+
+    for x in os.listdir(directory):
+        try:
+            pattern.match(x).group
+            call += "echo %s;" % (x)
+        # in case there isn't a match
+        except AttributeError:
+            0
+        
+    return call

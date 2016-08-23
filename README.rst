@@ -115,6 +115,10 @@ size(\*files)
 -------------
 Return the size of a file in human-readable format.
 
+find(directory, exp, func="")
+================================
+Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files.
+
 sort(directory, exp)
 --------------------
 Takes a directory *directory* and a regular expression *exp*. Sorts each file into a folder with name equal to the match of *exp* in its filename.
