@@ -115,8 +115,8 @@ size(\*files)
 -------------
 Return the size of a file in human-readable format.
 
-whereis(directory, exp, func="")
-================================
+whereis(directory, exp="[\s\S]*", func="")
+==========================================
 Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files.
 
 sort(directory, exp)

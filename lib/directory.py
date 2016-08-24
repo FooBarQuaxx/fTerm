@@ -133,7 +133,7 @@ def where():
     return 'echo "You are in "; pwd;'
 
 # NOTE: this is named whereis to not conflict with string.find() 
-def whereis(directory, exp, func=""):
+def whereis(directory, exp="[\s\S]*", func=""):
     """Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files."""
 
     call = ""
