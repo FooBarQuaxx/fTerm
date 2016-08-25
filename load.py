@@ -7,10 +7,10 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 """
 
 # NOTE: this is extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103
 
 # NOTE: this use of eval is safe
-# pylint: disable-msg=W0123
+# pylint: disable=W0123
 
 # import all commands
 import lib
@@ -38,13 +38,13 @@ def commands():
     """List all fTerm commands, tabulated."""
 
     call  = ""
-    
+
     for verb in verbs:
         args = formatargspec(*getargspec(verbs[verb]));
         call += "echo '%s %s : %s';" %  (verb, args, verbs[verb].__doc__)
- 
+
     return call
-        
+
 verbs["commands"] = commands
 
  # define our help function on current getFunc
