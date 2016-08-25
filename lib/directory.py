@@ -136,14 +136,14 @@ def where():
 def whereis(directory, exp="[\s\S]*", func=""):
     """Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files."""
 
-    call = ""
+    call = ":;"
     
     pattern = re.compile(exp)
 
     for x in os.listdir(directory):
         try:
             pattern.match(x).group
-            call += "echo %s;" % (x)
+            call += "echo '%s';" % (x)
         # in case there isn't a match
         except AttributeError:
             0
