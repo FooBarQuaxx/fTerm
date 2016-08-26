@@ -22,7 +22,7 @@ verbs = {}
 synonyms = {}
 
 for item in dir(lib):
-    if ("__" not in item) and (item != "os"):
+    if ("__" not in item) and (item not in ["os","module"]):
         package = eval("lib.%s" % (item))
         for func in dir(package):
             if func == "synonyms":
