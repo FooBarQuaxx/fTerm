@@ -7,10 +7,10 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 """
 
 # NOTE: extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103
 
 # NOTE: for some reason, pylint doesn't recognise load.synonyms
-# pylint: disable-msg=E0611
+# pylint: disable=E0611
 
 # for string matching
 from difflib import get_close_matches
