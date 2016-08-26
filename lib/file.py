@@ -20,7 +20,7 @@ synonyms = {
 
 def read(*files):
     """Read a file."""
-    return 'cat %s;' % tuple(files)
+    return 'less %s;' % tuple(files)
 
 def edit(*files):
     """Edit a file."""
