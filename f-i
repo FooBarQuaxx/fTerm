@@ -7,10 +7,10 @@ This program is the main file for fTerm.
 """
 
 # NOTE: this is extraneous
-# pylint: disable-msg=C0103
+# pylint: disable=C0103
 
 # NOTE: this would make line 19 unreadable
-# pylint: disable-msg=C0301
+# pylint: disable=C0301
 
 # allows parsing of arguments
 from sys import argv

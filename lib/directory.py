@@ -51,8 +51,7 @@ synonyms = {
     "dir":"where",
     "folder":"where",
 
-    "find":"whereis",
-    "locate":"whereis",
+    "locate":"find",
     }
 
 
@@ -132,20 +131,26 @@ def where():
     # TODO: Might be useful in a possible electron version? Scripting also. idk i was bored.
     return 'echo "You are in "; pwd;'
 
-# NOTE: this is named whereis to not conflict with string.find() 
-def whereis(directory, exp="[\s\S]*", func=""):
+def find(directory, exp="[\s\S]*", *funcs):
     """Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files."""
-
-    call = ":;"
+    
+    call = "echo -e '"
     
     pattern = re.compile(exp)
 
-    for x in os.listdir(directory):
+    # thanks to John La Rooy (stackoverflow.com/users/174728/john-la-rooy)
+    for x in [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(directory)) for f in fn]:
         try:
             pattern.match(x).group
-            call += "echo '%s';" % (x)
+            call += x + "\\n"
         # in case there isn't a match
         except AttributeError:
             0
-        
-    return call
+
+    # remove last newline
+    call = call[:-2]
+            
+    if len(funcs) != 0:
+        return call + "' | xargs %s;" % (" ".join(funcs))
+    else:
+        return call + "';"
