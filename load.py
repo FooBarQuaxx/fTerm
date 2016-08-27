@@ -15,10 +15,8 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 # for getting arg names
 from inspect import formatargspec, getargspec
 
-
 # import all commands
 import lib
-
 
 verbs = {}
 synonyms = {}

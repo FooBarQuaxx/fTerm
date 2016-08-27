@@ -136,21 +136,21 @@ def where():
     return 'echo "You are in "; pwd;'
 
 def find(directory, exp=r"[\s\S]*", *funcs):
-    """Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files."""
+    """Find all files in *directory* that match (python) regular expression *exp*. If specified, runs *func* on these files."""
 
     call = "echo -e '"
 
     pattern = re.compile(exp)
-
+    
     # thanks to John La Rooy (stackoverflow.com/users/174728/john-la-rooy)
     for x in [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(directory)) for f in fn]:
         try:
             # throws an AttributeError if there isn't a match
-            pattern.match(x).group()
+            pattern.match(os.path.basename(x)).group()
             call += x + "\\n"
         # in case there isn't a match
         except AttributeError:
-            pass
+            continue
 
     if call == "echo -e '":
         return ":;"

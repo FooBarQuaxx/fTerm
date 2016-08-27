@@ -71,7 +71,18 @@ Examples
    $ cat b
    this is a test!
 
-   
+.. code:: bash
+   $ f find .
+   ./skynet.py
+   ./lib/ai.py
+   ./lib/ai.pyc
+   ./lib/soul.py
+   ./lib/soul.pyc
+   $ f find . f find lib/ \(\.\*\)pyc\$
+   ./lib/ai.py
+   ./lib/soul.pyc
+
+
 ========
 Commands
 ========
@@ -107,7 +118,7 @@ where()
 
 find(directory, exp="[\s\S]*", func="")
 ---------------------------------------
-Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files.
+Find all files in *directory* that match (python) regular expression *exp*. If specified, runs *func* on these files.
 
 .. lib/file.py
 read(\*files)
