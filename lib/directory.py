@@ -141,12 +141,16 @@ def find(directory, exp="[\s\S]*", *funcs):
     # thanks to John La Rooy (stackoverflow.com/users/174728/john-la-rooy)
     for x in [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(directory)) for f in fn]:
         try:
+            # throws an AttributeError if there isn't a match
             pattern.match(x).group
             call += x + "\\n"
         # in case there isn't a match
         except AttributeError:
             0
 
+    if call == "echo -e '":
+        return ":;"
+    
     # remove last newline
     call = call[:-2]
             
