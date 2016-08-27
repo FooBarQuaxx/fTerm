@@ -6,6 +6,10 @@ This module defines all of the standard directory operations of fTerm.
 
 # NOTE: this is extraneous
 # pylint: disable=C0103,C0303
+# NOTE: no effect statement required
+# pylint: disable=C0301
+# NOTE: unused variable 'dn' required in directory traversal
+# pylint: disable=W0612
 
 # for running shell operations
 import subprocess
@@ -87,14 +91,14 @@ def delete(*files):
     return 'rm -rf %s;' * len(files) % tuple(files)
 
 
-def move(filename, pos):
+def move(path1, path2):
     """Move the file or folder at *path1* to *path2*."""
-    return "mv %s %s;" % (filename, pos)
+    return "mv %s %s;" % (path1, path2)
 
 
-def copy(filename, pos):
+def copy(path1, path2):
     """Copy the file or folder at *path1* to *path2*."""
-    return "cp %s %s;" % (filename, pos)
+    return "cp %s %s;" % (path1, path2)
 
 
 def sort(directory, exp):
@@ -128,32 +132,32 @@ def sort(directory, exp):
 
 def where():
     """(For shells that do not have a path string) show the current directory."""
-    # TODO: Might be useful in a possible electron version? Scripting also. idk i was bored.
+    # Might be useful in a possible electron version? Scripting also. idk i was bored.
     return 'echo "You are in "; pwd;'
 
-def find(directory, exp="[\s\S]*", *funcs):
+def find(directory, exp=r"[\s\S]*", *funcs):
     """Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files."""
-    
+
     call = "echo -e '"
-    
+
     pattern = re.compile(exp)
 
     # thanks to John La Rooy (stackoverflow.com/users/174728/john-la-rooy)
     for x in [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(directory)) for f in fn]:
         try:
             # throws an AttributeError if there isn't a match
-            pattern.match(x).group
+            pattern.match(x).group()
             call += x + "\\n"
         # in case there isn't a match
         except AttributeError:
-            0
+            pass
 
     if call == "echo -e '":
         return ":;"
-    
+
     # remove last newline
     call = call[:-2]
-            
+
     if len(funcs) != 0:
         return call + "' | xargs %s;" % (" ".join(funcs))
     else:

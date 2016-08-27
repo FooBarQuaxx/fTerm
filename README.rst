@@ -71,15 +71,54 @@ Examples
    $ cat b
    this is a test!
 
+   
 ========
 Commands
 ========
 
+.. lib/directory.py
 list(\*dirs)
 ------------
 List the files in a directory.
 
-adddline(filename, line)
+swap(file1, file2)
+------------------
+A function that swaps the names of two files.
+
+delete(\*files)
+---------------
+Delete a file or directory.
+
+move(path1, path2)
+------------------
+Move the file or folder at *path1* to *path2*.
+
+copy(path1, path2)
+------------------
+Copy the file or folder at *path1* to *path2*.
+
+sort(directory, exp)
+--------------------
+Takes a directory *directory* and a regular expression *exp*. Sorts each file into a folder with name equal to the match of *exp* in its filename.
+
+where()
+-------
+(For shells that don't have a path string) show the current directory.
+
+find(directory, exp="[\s\S]*", func="")
+---------------------------------------
+Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files.
+
+.. lib/file.py
+read(\*files)
+-------------
+Read a file.
+
+edit(\*files)
+-------------
+Edit a file.
+   
+addline(filename, line)
 ------------------------
 Append *line* to *filename*.
 
@@ -87,56 +126,30 @@ removeline(filename, line)
 --------------------------
 Remove *line* from file *filename*.
 
-delete(\*files)
----------------
-Delete a file or directory.
-
-edit(\*files)
+.. lib/misc.py
+size(\*files)
 -------------
-Edit a file.
-
-kill(\*processes)
------------------
-Kill the process with name *processname*.
-
-move(filename, pos)
--------------------
-Move the file or folder at *path1* to *path2*.
-
-read(\*files)
--------------
-Read a file.
+Return the size of a file in human-readable format.
 
 run(\*files)
 ------------
 A universal run function.
 
-size(\*files)
--------------
-Return the size of a file in human-readable format.
+kill(\*processes)
+-----------------
+Kill the process with name *processname*.
 
-find(directory, exp="[\s\S]*", func="")
-=======================================
-Find all files in *directory* that match regular expression *exp*. If specified, runs *func* on these files.
+rtfm(\*manpages)
+---------------
+Fun shortcut to man.
 
-sort(directory, exp)
---------------------
-Takes a directory *directory* and a regular expression *exp*. Sorts each file into a folder with name equal to the match of *exp* in its filename.
-
-swap(file1, file2)
-------------------
-A function that swaps the names of two files.
-
-where()
--------
-(For shells that don't have a path string) show the current directory.
-
+.. lib/zapcore.py
 compress(\*files)
 ------------------
 Compress a file.
 
 decompress(\*files)
---------------------
+-------------------
 Decompress a file.
 
 decrypt(\*files)
@@ -151,14 +164,18 @@ pack(*\files)
 -------------
 Pack a file/folder into a tar archive (no compression).
 
-unpack(*files)
---------------
+unpack(\*files)
+---------------
 Unpack a tar archive into a file/folder.
 
-rtfm(*manpages)
----------------
-Fun shortcut to man.
+.. load.py
+commands()
+----------
+List all fTerm commands, their argspecs, and their docstrings.
 
+help(commandname)
+-----------------
+Returns the docstring for fTerm command *commandname*.
 
 ================
 Installing (Mac)

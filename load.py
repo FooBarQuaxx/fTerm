@@ -12,17 +12,19 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 # NOTE: this use of eval is safe
 # pylint: disable=W0123
 
+# for getting arg names
+from inspect import formatargspec, getargspec
+
+
 # import all commands
 import lib
 
-# for getting arg names
-from inspect import formatargspec, getargspec
 
 verbs = {}
 synonyms = {}
 
 for item in dir(lib):
-    if ("__" not in item) and (item not in ["os","module"]):
+    if ("__" not in item) and (item not in ["os", "module"]):
         package = eval("lib.%s" % (item))
         for func in dir(package):
             if func == "synonyms":
@@ -37,10 +39,10 @@ verbs = {item:verbs[item] for item in verbs if item in synonyms.values()}
 def commands():
     """List all fTerm commands, tabulated."""
 
-    call  = ""
+    call = ""
 
     for verb in verbs:
-        args = formatargspec(*getargspec(verbs[verb]));
+        args = formatargspec(*getargspec(verbs[verb]))
         call += "echo '%s %s : %s';" %  (verb, args, verbs[verb].__doc__)
 
     return call
