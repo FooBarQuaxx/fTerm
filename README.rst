@@ -238,7 +238,7 @@ License
 =======
 This project is licensed under the GNU GPL License, version 3.0 - see the [LICENSE](LICENSE) file for details
 
-.. |homebrew| image:: https://img.shields.io/badge/homebrew-0.0.2a3-yellow.svg
+.. |homebrew| image:: https://img.shields.io/badge/homebrew-1.2.0-yellow.svg
    :alt: Homebrew
 
 .. |gplv3| image:: https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg
