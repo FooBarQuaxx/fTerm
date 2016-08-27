@@ -8,7 +8,7 @@ fTerm
 
 -----
 
-|homebrew| |gplv3| |awesome-true|
+|homebrew| |gplv3| |code-climate|
 
 -----
 
@@ -210,12 +210,13 @@ License
 =======
 This project is licensed under the GNU GPL License, version 3.0 - see the [LICENSE](LICENSE) file for details
 
-.. |homebrew| image:: https://img.shields.io/badge/homebrew-0.0.2a3-yellow.svg?style=flat-square
+.. |homebrew| image:: https://img.shields.io/badge/homebrew-0.0.2a3-yellow.svg
    :alt: Homebrew
 
-.. |gplv3| image:: https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg?style=flat-square
+.. |gplv3| image:: https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg
    :target: LICENSE
    :alt: GPLv3 License
 
-.. |awesome-true| image:: https://img.shields.io/badge/awesome%20-yes-brightgreen.svg?style=flat-square
+.. |code-climate| image:: https://codeclimate.com/github/fTerm/fTerm/badges/gpa.svg
+   :target: https://codeclimate.com/github/fTerm/fTerm
    :alt: awesome: true
