@@ -24,7 +24,7 @@ def read(*files):
 
 def edit(*files):
     """Edit a file."""
-    return 'nano %s;' * len(files) % tuple(files)
+    return '$EDITOR %s;' * len(files) % tuple(files)
 
 def addline(filename, line):
     """Append *line* to *filename*."""
