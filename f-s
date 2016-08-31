@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+while true
+do
+   read -p 'f>';
+   if [[ $REPLY != "exit" ]]; then
+      eval $(f-i $REPLY)
+   else
+      break
+   fi
+   
+done

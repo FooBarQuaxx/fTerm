@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
-eval $(python /usr/local/bin/f-i "$@")
+if [[ $1 == "-i" || $1 == "interactive" ]]; then
+  source f-s
+fi
+eval $(python f-i "$@")
