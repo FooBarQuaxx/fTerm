@@ -249,6 +249,6 @@ This project is licensed under the GNU GPL License, version 3.0 - see the [LICEN
    :target: https://codeclimate.com/github/fTerm/fTerm
    :alt: awesome: true
 
-.. |ethical-design| image:: https://img.shields.io/badge/_▲_-_❤_-blue.svg
+.. |ethical-design| image:: https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg
    :target: https://ind.ie/ethical-design
    :alt: We practice Ethical Design' src='
