@@ -8,7 +8,7 @@ fTerm
 
 -----
 
-|homebrew| |gplv3| |code-climate|
+|homebrew| |gplv3| |code-climate| |ethical-design|
 
 -----
 
@@ -248,3 +248,7 @@ This project is licensed under the GNU GPL License, version 3.0 - see the [LICEN
 .. |code-climate| image:: https://codeclimate.com/github/fTerm/fTerm/badges/gpa.svg
    :target: https://codeclimate.com/github/fTerm/fTerm
    :alt: awesome: true
+
+.. |ethical-design| image:: https://img.shields.io/badge/_▲_-_❤_-blue.svg
+   :target: https://ind.ie/ethical-design
+   :alt: We practice Ethical Design' src='
