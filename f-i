@@ -43,9 +43,9 @@ def run():
             return
         args = [x.replace(" ", "\\ ") for x in argv[2:]]
         suggestion += " " + " ".join(args)
-        try:
-            print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then %s fi" % (suggestion, f(*args))
-        except TypeError:
-            print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
+        #try:
+        print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*args), f(*args))
+        #except TypeError:
+        #    print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
 
 run()
