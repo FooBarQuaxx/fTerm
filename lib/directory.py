@@ -59,6 +59,12 @@ synonyms = {
     }
 
 
+# for swap and sort
+def temp():
+    """Generate a temporary file"""
+    temp = subprocess.Popen(["mktemp", "-d"], stdout=subprocess.PIPE)
+    return "echo %s" % (temp.communicate()[0].replace("\n", ""))
+    
 def List(*dirs): # name capitalised for no name conflict
     """List the files in a directory."""
     return "ls %s;" % (' '.join(dirs))
@@ -70,10 +76,7 @@ def swap(file1, file2):
     call = ""
 
     # make a temporary file
-    temp = subprocess.Popen(["mktemp", "-d"],
-                            stdout=subprocess.PIPE
-                           ).communicate()[0].replace("\n", "")
-
+    temp = temp().replace("echo", "")
     # move 1 to temp
     call += "mv %s %s/;" % (file1, temp)
 
@@ -114,9 +117,8 @@ def sort(directory, exp):
     folders = [re.search(exp, x).group(0) for x in files]
 
     # in case a directory name is the same as the name of a file
-    tempfiles = [subprocess.Popen(["mktemp", "-d"],
-                                  stdout=subprocess.PIPE
-                                 ).communicate()[0].replace("\n", "") for x in files]
+    tempfiles = temp().replace("echo", "")
+    
     for i in files.enumerate():
         call += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
 
