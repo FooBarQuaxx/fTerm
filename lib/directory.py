@@ -84,13 +84,13 @@ def swap(file1, file2):
     tempfile = raw_temp()
 
     # move 1 to temp
-    call += "mv %s %s/;" % (file1, tempfile)
+    call += "mv %s %s;" % (file1, tempfile)
 
     # move 2 to 1
     call += "mv %s %s;" % (file2, file1)
 
     # move temp to 1
-    call += "mv %s/%s %s;" % (tempfile, file1, file2)
+    call += "mv %s/$(basename %s) %s;" % (tempfile, file1, file2)
 
     return call
 
