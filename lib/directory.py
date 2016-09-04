@@ -81,7 +81,7 @@ def swap(file1, file2):
     tempfile = temp().replace("echo", "")
 
     # move 1 to temp
-    call += "mv %s %s/;" % (file1, temp)
+    call += "mv %s %s/;" % (file1, tempfile)
 
     # move 2 to 1
     call += "mv %s %s;" % (file2, file1)

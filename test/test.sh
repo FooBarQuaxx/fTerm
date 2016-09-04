@@ -15,7 +15,7 @@
     b=$(cat ~/fTerm-dev/test/swap/b)
 
     # swap files
-    f swap ~/fTerm-dev/test/swap/a ~/fTerm-dev/test/swap/b
+    echo | f swap ~/fTerm-dev/test/swap/a ~/fTerm-dev/test/swap/b
     
     # check that files are swapped
     [[ $(cat ~/fTerm-dev/test/swap/a) == b ]] && [[ $(cat ~/fTerm-dev/test/swap/b) == a ]]
