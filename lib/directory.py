@@ -143,6 +143,10 @@ def where():
     # Might be useful in a possible electron version? Scripting also. idk i was bored.
     return 'echo "You are in "; pwd;'
 
+def raw_find(directory):
+    """(dev only) Recursively find all files within a directory, return as Python list."""
+    return [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(directory)) for f in fn]
+
 def find(directory, exp=r"[\s\S]*", *funcs):
     """Find all files in *directory* that match (python) regular expression *exp*. If specified, runs *func* on these files."""
 
@@ -151,7 +155,7 @@ def find(directory, exp=r"[\s\S]*", *funcs):
     pattern = re.compile(exp)
     
     # thanks to John La Rooy (stackoverflow.com/users/174728/john-la-rooy)
-    for x in [os.path.join(dp, f) for dp, dn, fn in os.walk(os.path.expanduser(directory)) for f in fn]:
+    for x in raw_find(directory):
         try:
             # throws an AttributeError if there isn't a match
             pattern.match(os.path.basename(x)).group()
