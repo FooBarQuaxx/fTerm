@@ -63,9 +63,9 @@ synonyms = {
 
 # for swap and sort
 def temp():
-    """Generate a temporary file"""
+    """Generate a temporary file."""
     temp = subprocess.Popen(["mktemp", "-d"], stdout=subprocess.PIPE)
-    return "echo %s" % (temp.communicate()[0].replace("\n", ""))
+    return "echo %s;" % (temp.communicate()[0].replace("\n", ""))
     
 def List(*dirs): # name capitalised for no name conflict
     """List the files in a directory."""

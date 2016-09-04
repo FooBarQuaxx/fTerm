@@ -88,6 +88,10 @@ Commands
 ========
 
 .. lib/directory.py
+temp()
+------
+Make a temporary file.
+
 list(\*dirs)
 ------------
 List the files in a directory.
