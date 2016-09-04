@@ -22,6 +22,8 @@ import os
 
 
 synonyms = {
+    "tempfile":"temp",
+
     "files":"list",
     "contents":"list",
     "index":"list",
@@ -76,7 +78,8 @@ def swap(file1, file2):
     call = ""
 
     # make a temporary file
-    temp = temp().replace("echo", "")
+    tempfile = temp().replace("echo", "")
+
     # move 1 to temp
     call += "mv %s %s/;" % (file1, temp)
 
@@ -84,7 +87,7 @@ def swap(file1, file2):
     call += "mv %s %s;" % (file2, file1)
 
     # move temp to 1
-    call += "mv %s/%s %s;" % (temp, file1, file2)
+    call += "mv %s/%s %s;" % (tempfile, file1, file2)
 
     return call
 
