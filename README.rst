@@ -2,9 +2,7 @@
 fTerm
 *****
 
-.. image:: https://raw.githubusercontent.com/fterm/fterm/master/demo.png
-    :alt: fTerm demo #2
-    :align: center
+|main-image|
 
 -----
 
@@ -15,11 +13,13 @@ fTerm
 =====
 About
 =====
-fTerm is a terminal with english syntax and natural language processing.
+
+fTerm is a terminal command parser with english syntax and natural language processing.
 
 ======
 How-To
 ======
+
 To run *command* with arguments *a1, a2,...*, simply run
 
 .. code:: bash
@@ -90,38 +90,47 @@ Commands
 .. lib/directory.py
 temp()
 ------
+
 Make a temporary file.
 
 list(\*dirs)
 ------------
+
 List the files in a directory.
 
 swap(file1, file2)
 ------------------
+
 A function that swaps the names of two files.
 
 delete(\*files)
 ---------------
+
 Delete a file or directory.
 
 move(path1, path2)
 ------------------
+
 Move the file or folder at *path1* to *path2*.
 
 copy(path1, path2)
 ------------------
+
 Copy the file or folder at *path1* to *path2*.
 
 sort(directory, exp)
 --------------------
+
 Takes a directory *directory* and a regular expression *exp*. Sorts each file into a folder with name equal to the match of *exp* in its filename.
 
 where()
 -------
+
 (For shells that don't have a path string) show the current directory.
 
 find(directory, exp="[\s\S]*", func="")
 ---------------------------------------
+
 Find all files in *directory* that match (python) regular expression *exp*. If specified, runs *func* on these files.
 
 .. lib/file.py
@@ -131,23 +140,28 @@ Read a file.
 
 edit(\*files)
 -------------
+
 Edit a file.
    
 addline(filename, line)
 ------------------------
+
 Append *line* to *filename*.
 
 removeline(filename, line)
 --------------------------
+
 Remove *line* from file *filename*.
 
 .. lib/misc.py
 size(\*files)
 -------------
+
 Return the size of a file in human-readable format.
 
 run(\*files)
 ------------
+
 A universal run function.
 
 kill(\*processes)
@@ -156,45 +170,55 @@ Kill the process with name *processname*.
 
 rtfm(\*manpages)
 ---------------
+
 Fun shortcut to man.
 
 .. lib/zapcore.py
 compress(\*files)
 ------------------
+
 Compress a file.
 
 decompress(\*files)
 -------------------
+
 Decompress a file.
 
 decrypt(\*files)
 -----------------
+
 Decrypt a file.
 
 encrypt(\*files)
 ----------------
+
 Encrypt a file.
 
 pack(*\files)
 -------------
+
 Pack a file/folder into a tar archive (no compression).
 
 unpack(\*files)
 ---------------
+
 Unpack a tar archive into a file/folder.
 
 .. load.py
 commands()
 ----------
+
 List all fTerm commands, their argspecs, and their docstrings.
 
 help(commandname)
 -----------------
+
 Returns the docstring for fTerm command *commandname*.
 
 ================
 Installing (Mac)
 ================
+
 First, run
 
 .. code:: bash
@@ -217,30 +241,40 @@ fTerm is now installed! Verify your installation by running:
 =========
 Extending
 =========
+
 See `DEVELOPERS.rst <DEVELOPERS.rst>`_ for details.
 
 ============
 Contributing
 ============
+
 The fTerm project uses [gitmagic.io](https://gitmagic.io/) for pull requests. See the [contributing.json](contributing.json) file for more information.
 
 =====
 Notes
 =====
+
 - Install either the *zsh* or *fish* shell. Autocomplete is **awesome**.
 
 =======
 Authors
 =======
-- **Liam Schumm** - *Lead Developer* - [@lschumm](https://github.com/lschumm)
-- **Andy Merrill** - *Idea + Developer* - [@appleinventor](https://github.com/appleinventor)
-- **Jack Merrill** - *Web Developer* - [@yoshifan509](https://github.com/yoshifan509)
 
+- **Liam Schumm** - Lead Developer - `@lschumm <https://github.com/lschumm>`_.
+- **Andy Merrill** - Idea + Developer - `@appleinventor <https://github.com/appleinventor>`_.
+- **Jack Merrill** - Web Developer - `@yoshifan509 <https://github.com/yoshifan509>`_.
 
 =======
 License
 =======
+
 This project is licensed under the GNU GPL License, version 3.0 - see the [LICENSE](LICENSE) file for details
+
+
+.. |main-image| image:: https://raw.githubusercontent.com/fterm/fterm/master/demo.png
+   :alt: fTerm demo #2
+   :align: center
+
 
 .. |homebrew| image:: https://img.shields.io/badge/homebrew-1.2.0-yellow.svg
    :alt: Homebrew

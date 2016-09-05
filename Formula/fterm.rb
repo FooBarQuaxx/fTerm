@@ -8,7 +8,8 @@ class Fterm < Formula
   depends_on "xz"
   depends_on "pxz"
   depends_on "openssl"
-
+  depends_on "thefuck"
+  
   def install
      bin.install 'f'
      bin.install 'f-i'

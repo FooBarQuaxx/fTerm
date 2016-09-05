@@ -31,7 +31,7 @@
 
 @test "f temp passing" {
     eval "echo | f temp"
-    [ $? -eq 0]
+    [ $? -eq 0 ]
 }
 
 @test "f delete" {
