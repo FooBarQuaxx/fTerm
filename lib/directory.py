@@ -68,7 +68,7 @@ def raw_temp():
     
 def temp():
     """Generate a temporary file."""
-    return "echo %s;" % (raw_temp)
+    return "echo %s;" % (raw_temp())
     
 def List(*dirs): # name capitalised for no name conflict
     """List the files in a directory."""

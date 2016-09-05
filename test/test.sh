@@ -28,3 +28,13 @@
 @test "f help commands" {
     [ "$(echo | f help commands)" == "[f] List all fTerm commands, tabulated." ]
 }
+
+@test "f temp passing" {
+    eval "echo | f temp"
+    [ $? -eq 0]
+}
+
+@test "f delete" {
+    touch ~/fTerm-dev/test/delete/a
+    [ echo | f delete ~/fTerm-dev/test/delete/a -eq ""]
+}
