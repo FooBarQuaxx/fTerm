@@ -13,6 +13,7 @@ class Fterm < Formula
   def install
      bin.install 'f'
      bin.install 'f-i'
+     bin.install 'f-s'
      bin.install 'parser.py'
      bin.install 'load.py'
      bin.install 'lib'
