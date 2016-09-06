@@ -38,3 +38,12 @@
     touch ~/fTerm-dev/test/delete/a
     [ echo | f delete ~/fTerm-dev/test/delete/a -eq ""]
 }
+
+@test "f addline + f removeline" {
+   a=$(cat ~/fTerm-dev/test/addline,removeline/a)
+   echo | f addline ~/fTerm-dev/test/addline,removeline/a hello
+   b=$(cat ~/fTerm-dev/test/addline,removeline/a)
+   echo | f removeline cat ~/fTerm-dev/test/addline,removeline/a 0
+   c=$(cat ~/fTerm-dev/test/addline,removeline/a)
+   [[ a="" ]] && [[ b="hello" ]] && [[ c="" ]]
+}

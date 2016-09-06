@@ -151,7 +151,7 @@ Append *line* to *filename*.
 removeline(filename, line)
 --------------------------
 
-Remove *line* from file *filename*.
+Remove the line of number *line* (0-indexed) from file *filename*.
 
 .. lib/misc.py
 size(\*files)

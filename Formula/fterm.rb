@@ -18,6 +18,5 @@ class Fterm < Formula
      bin.install 'load.py'
      bin.install 'lib'
      puts "For the best experience, we recommend you use a terminal with auto-complete, such as fish (fish.sh) or zsh (zsh.org)."
-     sleep(5)
   end
 end

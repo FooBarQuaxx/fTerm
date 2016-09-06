@@ -31,7 +31,7 @@ def addline(filename, line):
     return 'echo %s >> %s;' % (line, filename)
 
 def removeline(filename, line):
-    """Remove *line* from file *filename*."""
+    """Remove the line of number *line* (0-indexed) from file *filename*."""
 
     data = open(filename.replace("\\", ""), "r").readlines()
 
