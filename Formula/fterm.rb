@@ -17,6 +17,7 @@ class Fterm < Formula
      bin.install 'parser.py'
      bin.install 'load.py'
      bin.install 'lib'
+     bin.install 'fterm-packages'
      puts "For the best experience, we recommend you use a terminal with auto-complete, such as fish (fish.sh) or zsh (zsh.org)."
   end
 end
