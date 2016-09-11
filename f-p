@@ -19,7 +19,7 @@ case $1 in
 		
 		cd -;
 	    fi
-	done < fterm-packages
+	done < $(brew --prefix fterm)/bin/fterm-packages
 
 	if [[ foundpackage == 1 ]]; then
 	    echo "No such package '$2'."
