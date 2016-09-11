@@ -3,7 +3,7 @@ require 'formula'
 class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fTerm/'
   url 'https://github.com/lschumm/homebrew-fTerm.git'
-  version '2.0.0b1'
+  version '2.0.0b2'
 
   depends_on "xz"
   depends_on "pxz"
@@ -13,7 +13,7 @@ class Fterm < Formula
   def install
      bin.install 'f'
      bin.install 'f-i'
-     bin.install 'f-s'
+     bin.install 'f-p'
      bin.install 'parser.py'
      bin.install 'load.py'
      bin.install 'lib'

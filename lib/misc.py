@@ -39,3 +39,7 @@ def kill(*processes):
 def rtfm(*manpages):
     """Fun shortcut to man."""
     return "man %s;" % " ".join(manpages)
+
+def install(*args):
+    """Shortcut to f-p."""
+    return "f-p %s;" % (" ".join(args))
