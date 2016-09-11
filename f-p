@@ -4,7 +4,7 @@ case $1 in
     "list")
 	while read p; do
 	    echo $(basename $p)
-	done < fterm-packages;;
+	done < $(brew --prefix fterm)/bin/fterm-packages;;
     "install")
 	foundpackage=0
         while read p; do

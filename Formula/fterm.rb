@@ -3,7 +3,7 @@ require 'formula'
 class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fTerm/'
   url 'https://github.com/lschumm/homebrew-fTerm.git'
-  version '2.0.0b3'
+  version '2.0.0b4'
 
   depends_on "xz"
   depends_on "pxz"
