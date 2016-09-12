@@ -3,21 +3,25 @@ require 'formula'
 class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fTerm/'
   url 'https://github.com/lschumm/homebrew-fTerm.git'
-  version '2.0.0b4'
 
+  # sets version variable in fterm code
+  # DRY: do not change
+  current_version="1.2.0b6"
+  version current_version
+  
   depends_on "xz"
   depends_on "pxz"
   depends_on "openssl"
   depends_on "thefuck"
   
   def install
+     inreplace "lib/misc.py", "{VERSION}", current_version
      bin.install 'f'
      bin.install 'f-i'
-     bin.install 'f-p'
+     bin.install 'f-s'
      bin.install 'parser.py'
      bin.install 'load.py'
      bin.install 'lib'
-     bin.install 'fterm-packages'
      puts "For the best experience, we recommend you use a terminal with auto-complete, such as fish (fish.sh) or zsh (zsh.org)."
   end
 end

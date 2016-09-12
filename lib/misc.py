@@ -9,11 +9,16 @@ This module defines some miscellaneous commands for fTerm.
 
 synonyms = {
     "space":"size",
+    
     "exec":"run",
     "execute":"run",
     "evaluate":"run",
+
     "end":"kill",
-    "man":"rtfm"
+
+    "man":"rtfm",
+    
+    "fterm-edition":"version",
     }
 
 def size(*files):
@@ -40,6 +45,7 @@ def rtfm(*manpages):
     """Fun shortcut to man."""
     return "man %s;" % " ".join(manpages)
 
-def install(*args):
-    """Shortcut to f-p."""
-    return "f-p %s;" % (" ".join(args))
+def version():
+    """Return the current version of fTerm."""
+    # replaced by homebrew formula
+    return "{VERSION}"
