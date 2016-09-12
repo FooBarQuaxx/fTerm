@@ -271,10 +271,9 @@ License
 This project is licensed under the GNU GPL License, version 3.0 - see the [LICENSE](LICENSE) file for details
 
 
-.. |main-image| image:: ./demo.png
+.. |main-image| image:: https://raw.githubusercontent.com/fTerm/fTerm/master/demo.png
    :alt: fTerm demo #2
    :align: center
-
 
 .. |homebrew| image:: https://img.shields.io/badge/homebrew-1.2.0-yellow.svg
    :alt: Homebrew
