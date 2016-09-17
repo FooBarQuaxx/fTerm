@@ -17,7 +17,6 @@ class Fterm < Formula
      inreplace "lib/misc.py", "{VERSION}", "1.2.0b6"
      bin.install 'f'
      bin.install 'f-i'
-     bin.install 'f-s'
      bin.install 'parser.py'
      bin.install 'load.py'
      bin.install 'lib'
