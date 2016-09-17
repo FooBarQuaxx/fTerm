@@ -7,15 +7,14 @@ class Fterm < Formula
   # sets version variable in fterm code
   # DRY: do not change
   current_version="1.2.0b6"
-  version current_version
-  
+
   depends_on "xz"
   depends_on "pxz"
   depends_on "openssl"
   depends_on "thefuck"
   
   def install
-     inreplace "lib/misc.py", "{VERSION}", current_version
+     inreplace "lib/misc.py", "{VERSION}", "1.2.0b6"
      bin.install 'f'
      bin.install 'f-i'
      bin.install 'f-s'
