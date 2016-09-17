@@ -15,9 +15,22 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 # for getting arg names
 from inspect import formatargspec, getargspec
 
-# import all commands
+# import default commands
 import lib
 
+# load external modules
+import subprocess, os, sys
+ps = subprocess.Popen(("brew", "list"), stdout=subprocess.PIPE)
+s = subprocess.check_output(("grep", "-i", "fterm"), stdin=ps.stdout)
+for module in s.split("\n"):
+    sys.path.insert(0, subprocess.Popen(["brew", "--prefix", module], stdout=subprocess.PIPE).communicate()[0]+"/dir/package")
+    if os.path.basename(module) != "fterm":
+        try:
+            i = __import__(os.path.basename(module))
+            lib.__dict__.update(i.__dict__)
+        except ValueError:
+            pass
+            
 verbs = {}
 synonyms = {}
 
