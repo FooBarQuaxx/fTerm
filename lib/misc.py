@@ -47,4 +47,4 @@ def rtfm(*manpages):
 
 def version():
     """Return the current version of fTerm."""
-    return "echo 1.2.0b6;"
+    return "echo {VERSION};"
