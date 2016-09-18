@@ -22,17 +22,6 @@ verbs = {}
 synonyms = {}
 
 
-# load external modules
-import subprocess, os, sys
-sys.path.insert(1,"~/.fterm")
-for item in os.list(os.path.expanduser("~/.fterm"):
-    if os.path.basename(module) != "fterm":
-        try:
-            i = __import__(os.path.basename(module)[:-3])
-            lib.__dict__.update(i.__dict__)
-        except ValueError:
-            pass
-
 for item in dir(lib):
     if ("__" not in item) and (item not in ["os", "module"]):
         package = eval("lib.%s" % (item))
