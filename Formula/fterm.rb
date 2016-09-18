@@ -6,7 +6,7 @@ class Fterm < Formula
 
   # sets version variable in fterm code
   # DRY: do not change
-  current_version="1.2.0b6"
+  current_version="1.2.0b7"
 
   depends_on "xz"
   depends_on "pxz"
@@ -20,6 +20,7 @@ class Fterm < Formula
      bin.install 'parser.py'
      bin.install 'load.py'
      bin.install 'lib'
+     system "mkdir ~/.fterm"
      puts "For the best experience, we recommend you use a terminal with auto-complete, such as fish (fish.sh) or zsh (zsh.org)."
   end
 end
