@@ -18,7 +18,8 @@ synonyms = {
 
     "man":"rtfm",
     
-    "fterm-edition":"version",
+    "fterm-edition":"fterm_version",
+    "version":"fterm_version",
     }
 
 def size(*files):
@@ -45,6 +46,6 @@ def rtfm(*manpages):
     """Fun shortcut to man."""
     return "man %s;" % " ".join(manpages)
 
-def version():
+def fterm_version():
     """Return the current version of fTerm."""
     return "echo {VERSION};"
