@@ -272,7 +272,7 @@ License
 This project is licensed under the GNU GPL License, version 3.0 - see the [LICENSE](LICENSE) file for details
 
 
-.. |main-image| image:: https://raw.githubusercontent.com/lschumm/homebrew-fterm/demo.png
+.. |main-image| image:: https://raw.githubusercontent.com/lschumm/homebrew-fterm/master/demo.png
    :alt: fTerm demo #2
    :align: center
 
