@@ -255,7 +255,8 @@ Notes
 =====
 
 - Install either the *zsh* or *fish* shell. Autocomplete is **awesome**.
-
+- fTerm uses `@nvbn's <https://github.com/nvbn>`_ `thefuck <https://github.com/nvbn/thefuck>`_ to correct commands.
+  
 =======
 Authors
 =======
