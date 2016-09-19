@@ -2,7 +2,9 @@
 fTerm
 *****
 
-|main-image|
+.. image:: demo.png
+   :alt: fTerm demo #2
+   :align: center
 
 -----
 
