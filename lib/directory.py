@@ -63,8 +63,8 @@ synonyms = {
 
 def raw_temp():
     """(only for other functions) Generate a temporary file."""
-    temp = subprocess.Popen(["mktemp", "-d"], stdout=subprocess.PIPE)
-    return temp.communicate()[0].replace("\n", "")
+    tempfile = subprocess.Popen(["mktemp", "-d"], stdout=subprocess.PIPE)
+    return tempfile.communicate()[0].replace("\n", "")
     
 def temp():
     """Generate a temporary file."""

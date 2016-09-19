@@ -12,6 +12,9 @@ and secondly with a difflib.get_close_matches check (in case of typos).
 # NOTE: this use of eval is safe
 # pylint: disable=W0123
 
+# NOTE: this makes code more readable
+# pylint: disable=C0303
+
 # for getting arg names
 from inspect import formatargspec, getargspec
 
