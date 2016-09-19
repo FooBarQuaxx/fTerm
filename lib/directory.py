@@ -118,23 +118,26 @@ def sort(directory, exp):
 
     # files to sort
     files = os.listdir(directory)
+    files_index = files.enumerate()
 
     # make folders to sort
     folders = [re.search(exp, x).group(0) for x in files]
 
     # in case a directory name is the same as the name of a file
     tempfiles = raw_temp()
+
+    call1, call2, call3 = [""]*3
     
-    for i in files.enumerate():
-        call += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
+    for i in files_index:
+        call1 += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
+        call2 += "mkdir %s" % (re.search(exp, files[i]).group(0))
+        call3 += "mv %s %/s%s"
 
+    call = call1 + call2 + call3
+        
     # create directories
-    for item in set(folders):
+    for item in files_index:
         call += "mkdir %s;" % (item)
-
-    # do sorting
-    for i in files.enumerate():
-        call += "mv %s/%s %s/;" % (tempfiles[i], files[i], folders[i])
 
     return call
 
