@@ -118,7 +118,7 @@ def sort(directory, exp):
 
     # files to sort
     files = os.listdir(directory)
-    files_index = files.enumerate()
+    files_index = enumerate(files)
 
     # make folders to sort
     folders = [re.search(exp, x).group(0) for x in files]

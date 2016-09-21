@@ -8,7 +8,7 @@ fTerm
 
 -----
 
-|homebrew| |gplv3| |code-climate| |ethical-design|
+|homebrew| |gplv3| |code-climate| |pylint| |ethical-design|
 
 -----
 
@@ -240,9 +240,19 @@ fTerm is now installed! Verify your installation by running:
    $ f
    [f-i] Please specify a command (e.g., f swap file1 file2)
 
-=========
+
+========
+Packages
+========
+
+- `git (aliases) <https://github.com/fterm/package-git`_
+- `zapcore (file compression) <https://github.com/fterm/package-zapcore>`_
+   
+   =========
 Extending
 =========
+
+
 
 See `DEVELOPERS.rst <DEVELOPERS.rst>`_ for details.
 
@@ -278,7 +288,7 @@ This project is licensed under the GNU GPL License, version 3.0 - see the [LICEN
    :alt: fTerm demo #2
    :align: center
 
-.. |homebrew| image:: https://img.shields.io/badge/homebrew-1.2.0-yellow.svg
+.. |homebrew| image:: https://img.shields.io/badge/homebrew-2.0.0-brown.svg
    :alt: Homebrew
 
 .. |gplv3| image:: https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg
@@ -288,6 +298,8 @@ This project is licensed under the GNU GPL License, version 3.0 - see the [LICEN
 .. |code-climate| image:: https://codeclimate.com/github/fTerm/fTerm/badges/gpa.svg
    :target: https://codeclimate.com/github/fTerm/fTerm
    :alt: awesome: true
+
+.. |pylint| image:: https://img.shields.io/
 
 .. |ethical-design| image:: https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg
    :target: https://ind.ie/ethical-design
