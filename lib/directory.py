@@ -134,10 +134,6 @@ def sort(directory, exp):
         call3 += "mv %s %/s%s"
 
     call = call1 + call2 + call3
-        
-    # create directories
-    for i, item in files_index:
-        call += "mkdir %s;" % (i)
 
     return call
 
