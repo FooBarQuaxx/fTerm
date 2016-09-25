@@ -128,7 +128,7 @@ def sort(directory, exp):
 
     call1, call2, call3 = [""]*3
     
-    for i in files_index:
+    for i, item in files_index:
         call1 += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
         call2 += "mkdir %s" % (re.search(exp, files[i]).group(0))
         call3 += "mv %s %/s%s"
@@ -136,8 +136,8 @@ def sort(directory, exp):
     call = call1 + call2 + call3
         
     # create directories
-    for item in files_index:
-        call += "mkdir %s;" % (item)
+    for i, item in files_index:
+        call += "mkdir %s;" % (i)
 
     return call
 
