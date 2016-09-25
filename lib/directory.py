@@ -130,8 +130,8 @@ def sort(directory, exp):
     
     for i, item in files_index:
         call1 += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
-        call2 += "mkdir %s" % (re.search(exp, files[i]).group(0))
-        call3 += "mv %s %/s%s"
+        call2 += "mkdir %s;" % (re.search(exp, files[i]).group(0))
+        call3 += "mv %s %/s%s;"
 
     call = call1 + call2 + call3
 
