@@ -146,7 +146,7 @@ edit(\*files)
 Edit a file.
    
 addline(filename, line)
-------------------------
+-----------------------
 
 Append *line* to *filename*.
 
@@ -171,7 +171,7 @@ kill(\*processes)
 Kill the process with name *processname*.
 
 rtfm(\*manpages)
----------------
+----------------
 
 Fun shortcut to man.
 
@@ -216,6 +216,11 @@ help(commandname)
 -----------------
 
 Returns the docstring for fTerm command *commandname*.
+
+version()
+---------
+
+Returns the current fTerm version.
 
 ================
 Installing (Mac)
@@ -303,4 +308,4 @@ This project is licensed under the GNU GPL License, version 3.0 - see the [LICEN
 
 .. |ethical-design| image:: https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg
    :target: https://ind.ie/ethical-design
-   :alt: We practice Ethical Design' src='
+   :alt: We practice Ethical Design
