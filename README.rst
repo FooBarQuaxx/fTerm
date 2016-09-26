@@ -8,7 +8,7 @@ fTerm
 
 -----
 
-|homebrew| |gplv3| |code-climate| |pylint| |ethical-design|
+|homebrew| |gplv3| |code-climate| |ethical-design|
 
 -----
 
@@ -196,7 +196,7 @@ encrypt(\*files)
 
 Encrypt a file.
 
-pack(*\files)
+pack(\*files)
 -------------
 
 Pack a file/folder into a tar archive (no compression).
@@ -228,19 +228,19 @@ Installing (Mac)
 
 First, run
 
-.. code:: bash
+.. code::
 
    brew tap fterm/fterm
 
 and then
 
-.. code:: bash
+.. code::
 
    brew install fterm
 
 fTerm is now installed! Verify your installation by running:
 
-.. code:: bash
+.. code::
 
    $ f
    [f-i] Please specify a command (e.g., f swap file1 file2)
@@ -250,7 +250,7 @@ fTerm is now installed! Verify your installation by running:
 Packages
 ========
 
-- `git (aliases) <https://github.com/fterm/package-git`_
+- `git (aliases) <https://github.com/fterm/package-git>`_
 - `zapcore (file compression) <https://github.com/fterm/package-zapcore>`_
    
 =========
