@@ -217,8 +217,8 @@ help(commandname)
 
 Returns the docstring for fTerm command *commandname*.
 
-version()
----------
+fterm_version()
+---------------
 
 Returns the current fTerm version.
 
@@ -230,7 +230,7 @@ First, run
 
 .. code:: bash
 
-   brew tap lschumm/tap
+   brew tap fterm/fterm
 
 and then
 
@@ -265,7 +265,7 @@ See `DEVELOPERS.rst <DEVELOPERS.rst>`_ for details.
 Contributing
 ============
 
-The fTerm project uses [gitmagic.io](https://gitmagic.io/) for pull requests. See the [contributing.json](contributing.json) file for more information.
+The fTerm project uses `gitmagic.io <https://gitmagic.io/>`_ for pull requests. See the `contributing.json <contributing.json>`_ file for more information.
 
 =====
 Notes
@@ -303,8 +303,6 @@ This project is licensed under the GNU GPL License, version 3.0 - see the [LICEN
 .. |code-climate| image:: https://codeclimate.com/github/fTerm/fTerm/badges/gpa.svg
    :target: https://codeclimate.com/github/fTerm/fTerm
    :alt: awesome: true
-
-.. |pylint| image:: https://img.shields.io/
 
 .. |ethical-design| image:: https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg
    :target: https://ind.ie/ethical-design
