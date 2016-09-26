@@ -124,16 +124,17 @@ def sort(directory, exp):
     folders = [re.search(exp, x).group(0) for x in files]
 
     # in case a directory name is the same as the name of a file
-    tempfiles = raw_temp()
+    tempfiles = [raw_temp() for i in files]
 
-    call1, call2, call3 = [""]*3
+    call1, call3 = "", ""
+    call2 = [] # no identical mkdir, throws warning
     
     for i, item in files_index:
         call1 += "mv %s %s/%s;" % (files[i], tempfiles[i], files[i])
-        call2 += "mkdir %s;" % (re.search(exp, files[i]).group(0))
-        call3 += "mv %s %/s%s;"
+        call2.append("mkdir %s;" % (re.search(exp, files[i]).group(0)))
+        call3 += "mv %s/%s %s/$(basename %s);" % (tempfiles[i], files[i], folders[i], files[i])
 
-    call = call1 + call2 + call3
+    call = call1 + "".join(set(call2)) + call3
 
     return call
 
