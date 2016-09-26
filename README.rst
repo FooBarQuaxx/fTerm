@@ -253,7 +253,7 @@ Packages
 - `git (aliases) <https://github.com/fterm/package-git`_
 - `zapcore (file compression) <https://github.com/fterm/package-zapcore>`_
    
-   =========
+=========
 Extending
 =========
 
