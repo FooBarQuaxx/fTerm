@@ -4,7 +4,7 @@ class Fterm < Formula
   homepage 'https://github.com/fterm/fterm/'
   url 'https://github.com/fterm/fterm.git'
 
-  version "2.0.0"
+  version "2.0.1b1"
   
   depends_on "xz"
   depends_on "pxz"
