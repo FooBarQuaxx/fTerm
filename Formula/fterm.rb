@@ -1,10 +1,10 @@
 require 'formula'
 
 class Fterm < Formula
-  homepage 'https://github.com/fterm/fterm/'
-  url 'https://github.com/fterm/fterm.git'
+  homepage 'https://github.com/lschumm/homebrew-fterm/'
+  url 'https://github.com/lschumm/homebrew-fterm.git'
 
-  version "2.0.1b1"
+  version "2.0.1b2"
   
   depends_on "xz"
   depends_on "pxz"
@@ -12,7 +12,7 @@ class Fterm < Formula
   depends_on "thefuck"
   
   def install
-     inreplace "lib/misc.py", "{VERSION}", "2.0.0"
+     inreplace "lib/misc.py", "{VERSION}", "2.0.1b2"
      bin.install 'f'
      bin.install 'f-i'
      bin.install 'parser.py'
