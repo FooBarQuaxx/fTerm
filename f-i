@@ -25,6 +25,34 @@ def shellquote(s):
     """Fix quotes for terminal."""
     return "'" + s.replace("'", "'\\''") + "'"
 
+def adjectives_and_nouns(args):
+    """Find adjectives in arguments."""
+    #print args
+    adj = []
+    nouns = []
+    switch = 0
+    for item in args:
+        # check if brackets are around arguments
+        if item[0] == "[" and item[-1] == "]":
+            adj.append(item[1:-1])
+            switch = 0
+            continue
+        elif item[0] == "[":
+            switch = 1
+            adj.append(item[1:])
+        elif item[-1] == "]":
+            adj.append(item[:-1])
+            switch = 0
+        # add to appropriate lists
+        if switch == 1:
+            switch = 2
+        elif switch == 2:
+            adj.append(item)
+            switch = 0
+        else:
+            nouns.append(item)
+    return (adj, nouns)
+        
 def run():
     """The main function for fTerm"""
     argnum = len(argv)
@@ -41,10 +69,18 @@ def run():
         except (KeyError, IndexError):
             print "echo '[f-i] Invalid function %s';" % (argv[1]),
             return
-        args = [x.replace(" ", "\\ ") for x in argv[2:]]
-        suggestion += " " + " ".join(args)
+        args = adjectives_and_nouns([x.replace(" ", "\\ ") for x in argv[2:]])
+        adj = args[0]
+        nouns = args[1]
+        #suggestion += " " + " ".join(args)
         try:
-            print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*args), f(*args))
+            if adj != []:
+                print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*nouns, adjectives=adj), f(*nouns, adjectives=adj))
+            else:
+                try:
+                    print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*nouns), f(*nouns))
+                except TypeError:
+                    print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*nouns), f(*nouns))
         except TypeError:
             print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
 

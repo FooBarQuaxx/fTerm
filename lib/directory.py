@@ -69,10 +69,13 @@ def raw_temp():
 def temp():
     """Generate a temporary file."""
     return "echo %s;" % (raw_temp())
-    
-def List(*dirs): # name capitalised for no name conflict
+
+def List(*dirs, **keywords): # name capitalised for no name conflict
     """List the files in a directory."""
-    return "ls %s;" % (' '.join(dirs))
+    adj_prefix = ""
+    if ["oneline"] in keywords.values():
+        adj_prefix += "-l "
+    return "ls %s %s;" % (adj_prefix, ' '.join(dirs))
 
 
 def swap(file1, file2):
