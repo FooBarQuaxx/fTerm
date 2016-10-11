@@ -9,6 +9,10 @@
    [[ $(echo | f list ~)  == $(ls ~) ]]
 }
 
+@test "f list [oneline] equal to ls -l" {
+    [[ $(echo | f list [oneline] ~) == $(ls -l ~) ]]
+}
+
 @test "f swap ~/fTerm-dev/test/swap/a ~/fTerm-dev/test/swap/b" {
     # read files to swap
     a=$(cat ~/fTerm-dev/test/swap/a)
