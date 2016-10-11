@@ -38,9 +38,12 @@ def run(*files):
                                          , "echo '[f-i] Filetype %s not recognized';")
                     % (x) for x in files])
 
-def kill(*processes):
+def kill(*processes, **keywords):
     """Kill the process with name *processname*."""
-    return "pkill %s;" * len(processes) % tuple(processes)
+    adj_prefix = ""
+    if ["force"] in keywords.values():
+        adj_prefix += "-9"    
+    return "pkill %s %s;" * len(processes) % ((adj_prefix,)* len(processes), tuple(processes))
 
 def rtfm(*manpages):
     """Fun shortcut to man."""

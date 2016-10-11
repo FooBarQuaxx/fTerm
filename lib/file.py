@@ -18,8 +18,10 @@ synonyms = {
     }
 
 
-def read(*files):
+def read(*files, **keywords):
     """Read a file."""
+    if ["nano"] in keywords.values():
+        return "nano %s" % tuple(files)
     return 'less %s;' % tuple(files)
 
 def edit(*files):
