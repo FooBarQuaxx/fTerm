@@ -16,6 +16,8 @@ synonyms = {
 
     "end":"kill",
 
+    "usage":"processes",
+    
     "man":"rtfm",
     
     "fterm-edition":"fterm_version",
@@ -44,6 +46,10 @@ def kill(*processes, **keywords):
     if ["force"] in keywords.values():
         adj_prefix += "-9"    
     return "pkill %s %s;" * len(processes) % ((adj_prefix,)* len(processes), tuple(processes))
+
+def processes():
+    """Alias for htop."""
+    return "htop;"
 
 def rtfm(*manpages):
     """Fun shortcut to man."""

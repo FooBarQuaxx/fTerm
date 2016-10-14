@@ -10,6 +10,7 @@ class Fterm < Formula
   depends_on "pxz"
   depends_on "openssl"
   depends_on "thefuck"
+  depends_on "htop"
   
   def install
      inreplace "lib/misc.py", "{VERSION}", "2.0.1b2"
