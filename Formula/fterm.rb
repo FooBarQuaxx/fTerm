@@ -4,7 +4,7 @@ class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fterm/'
   url 'https://github.com/lschumm/homebrew-fterm.git'
 
-  version "2.0.1b2"
+  version "2.0.1b3"
   
   depends_on "xz"
   depends_on "pxz"

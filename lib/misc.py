@@ -17,6 +17,8 @@ synonyms = {
     "end":"kill",
 
     "usage":"processes",
+
+    "logins":"users",
     
     "man":"rtfm",
     
@@ -50,6 +52,10 @@ def kill(*processes, **keywords):
 def processes():
     """Alias for htop."""
     return "htop;"
+
+def users():
+    """Alias for w."""
+    return "w;"
 
 def rtfm(*manpages):
     """Fun shortcut to man."""
