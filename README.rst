@@ -145,8 +145,8 @@ edit(\*files)
 
 Edit a file.
    
-addline(filename, line)
------------------------
+addline *filename* *line*
+-------------------------
 
 Append *line* to *filename*.
 
@@ -156,21 +156,32 @@ removeline(filename, line)
 Remove the line of number *line* (0-indexed) from file *filename*.
 
 .. lib/misc.py
-size(\*files)
--------------
+size \*files
+------------
 
 Return the size of a file in human-readable format.
 
-run(\*files)
-------------
+run \*files
+-----------
 
 A universal run function.
 
-kill(\*processes)
------------------
+kill \*processes
+----------------
+
 Kill the process with name *processname*.
 
-rtfm(\*manpages)
+processes
+---------
+
+Alias for htop.
+
+users
+-----
+
+Alias for w.
+
+rtfm \*manpages
 ----------------
 
 Fun shortcut to man.

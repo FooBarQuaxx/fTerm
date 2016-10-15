@@ -17,9 +17,9 @@ synonyms = {
     "end":"kill",
 
     "usage":"processes",
-
+    "top":"processes",
+    
     "logins":"users",
-    "top":"users",
     
     "man":"rtfm",
     
