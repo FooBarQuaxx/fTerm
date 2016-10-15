@@ -90,58 +90,58 @@ Commands
 ========
 
 .. lib/directory.py
-temp()
-------
+temp
+----
 
 Make a temporary file.
 
-list(\*dirs)
-------------
+list *\*dirs*
+-------------
 
 List the files in a directory.
 
-swap(file1, file2)
-------------------
+swap *file1* *file2*
+--------------------
 
 A function that swaps the names of two files.
 
-delete(\*files)
----------------
+delete *\*files*
+----------------
 
 Delete a file or directory.
 
-move(path1, path2)
-------------------
+move *path1* *path2*
+--------------------
 
 Move the file or folder at *path1* to *path2*.
 
-copy(path1, path2)
-------------------
+copy *path1* *path2*
+-------------------
 
 Copy the file or folder at *path1* to *path2*.
 
-sort(directory, exp)
---------------------
+sort *directory* *exp*
+----------------------
 
 Takes a directory *directory* and a regular expression *exp*. Sorts each file into a folder with name equal to the match of *exp* in its filename.
 
-where()
--------
+where
+-----
 
 (For shells that don't have a path string) show the current directory.
 
-find(directory, exp="[\s\S]*", func="")
----------------------------------------
+find *directory* *exp="[\s\S]\*"* *func=""*
+-------------------------------------------
 
 Find all files in *directory* that match (python) regular expression *exp*. If specified, runs *func* on these files.
 
 .. lib/file.py
-read(\*files)
--------------
+read *\*files*
+--------------
 Read a file.
 
-edit(\*files)
--------------
+edit *\*files*
+--------------
 
 Edit a file.
    
@@ -150,24 +150,24 @@ addline *filename* *line*
 
 Append *line* to *filename*.
 
-removeline(filename, line)
---------------------------
+removeline *filename* *line*
+----------------------------
 
 Remove the line of number *line* (0-indexed) from file *filename*.
 
 .. lib/misc.py
-size \*files
-------------
+size *\*files*
+--------------
 
 Return the size of a file in human-readable format.
 
-run \*files
------------
+run *\*files*
+-------------
 
 A universal run function.
 
-kill \*processes
-----------------
+kill *\*processes*
+------------------
 
 Kill the process with name *processname*.
 
@@ -181,61 +181,61 @@ users
 
 Alias for w.
 
-rtfm \*manpages
-----------------
+rtfm *\*manpages*
+-----------------
 
 Fun shortcut to man.
 
 .. lib/zapcore.py
-compress(\*files)
+compress *\*files*
 ------------------
 
 Compress a file.
 
-decompress(\*files)
--------------------
+decompress *\*files*
+--------------------
 
 Decompress a file.
 
-decrypt(\*files)
+decrypt *\*files*
 -----------------
 
 Decrypt a file.
 
-encrypt(\*files)
-----------------
+encrypt *\*files*
+-----------------
 
 Encrypt a file.
 
-pack(\*files)
--------------
+pack *\*files*
+--------------
 
 Pack a file/folder into a tar archive (no compression).
 
-unpack(\*files)
----------------
+unpack *\*files*
+----------------
 
 Unpack a tar archive into a file/folder.
 
 .. load.py
-commands()
-----------
+commands
+--------
 
 List all fTerm commands, their argspecs, and their docstrings.
 
-help(commandname)
------------------
+help *commandname*
+------------------
 
 Returns the docstring for fTerm command *commandname*.
 
-fterm_version()
----------------
+fterm_version
+-------------
 
 Returns the current fTerm version.
 
-================
+****************
 Installing (Mac)
-================
+****************
 
 First, run
 
