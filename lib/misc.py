@@ -26,6 +26,8 @@ synonyms = {
     
     "man":"rtfm",
     
+    "memory":"free",
+    
     "fterm-edition":"fterm_version",
     "version":"fterm_version",
     }
@@ -98,11 +100,11 @@ def free():
             rowElements = sep.split(rowText)
             vmStats[(rowElements[0])] = int(rowElements[1].strip('\.')) * 4096
 
-    print "echo 'Wired Memory:\t\t%d MB';" % (vmStats["Pages wired down"]/1024/1024) + \
-          "echo 'Active Memory:\t\t%d MB';" % (vmStats["Pages active"]/1024/1024) + \
-          "echo 'Inactive Memory:\t%d MB';" % (vmStats["Pages inactive"]/1024/1024) + \
-          "echo 'Free Memory:\t\t%d MB';" % (vmStats["Pages free"]/1024/1024) + \
-          "echo 'Real Mem Total (ps):\t%.3f MB';" % (rssTotal/1024/1024)
+    return "echo 'Wired Memory:\t\t%d MB';" % (vmStats["Pages wired down"]/1024/1024) + \
+           "echo 'Active Memory:\t\t%d MB';" % (vmStats["Pages active"]/1024/1024) + \
+           "echo 'Inactive Memory:\t%d MB';" % (vmStats["Pages inactive"]/1024/1024) + \
+           "echo 'Free Memory:\t\t%d MB';" % (vmStats["Pages free"]/1024/1024) + \
+           "echo 'Real Mem Total (ps):\t%.3f MB';" % (rssTotal/1024/1024)
 
 def fterm_version():
     """Return the current version of fTerm."""
