@@ -11,12 +11,18 @@ synonyms = {
     "setvolume":"volume",
 
     "quit":"quit_application",
+
+    "relaunch":"relaunch_application",
     }
 
 def volume(x):
     """Set volume."""
     return 'osascript -e "set Volume %s"' % (x)
 
-def quit_application(x):
+def quit_application(appname):
     """Quit (nicely) an application."""
-    return "osascript -e 'tell app \"%s\" to quit" % (x)
+    return "osascript -e 'quit app \"%s\"" % (appname)
+
+def relaunch_application(appname):
+    """Relaunch an application."""
+    return quit_application(appname) + "sleep 2; open -a %s" % (appname)
