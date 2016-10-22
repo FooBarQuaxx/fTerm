@@ -4,7 +4,7 @@ class Fterm < Formula
   homepage 'https://github.com/lschumm/homebrew-fterm/'
   url 'https://github.com/lschumm/homebrew-fterm.git'
 
-  version "2.0.1b3"
+  version "2.0.1b4"
   
   depends_on "xz"
   depends_on "pxz"
@@ -13,7 +13,7 @@ class Fterm < Formula
   depends_on "htop"
   
   def install
-     inreplace "lib/misc.py", "{VERSION}", "2.0.1b2"
+     inreplace "lib/misc.py", "{VERSION}", "2.0.1b4"
      bin.install 'f'
      bin.install 'f-i'
      bin.install 'parser.py'
