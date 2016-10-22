@@ -8,7 +8,7 @@ fTerm
 
 -----
 
-|homebrew| |gplv3| |code-climate| |ethical-design|
+|homebrew| |gplv3| |code-climate| |ethical-design| |sloccount|
 
 -----
 
@@ -320,3 +320,7 @@ This project is licensed under the GNU GPL License, version 3.0 - see the `LICEN
 .. |ethical-design| image:: https://img.shields.io/badge/Ethical_Design-_▲_❤_-blue.svg
    :target: https://ind.ie/ethical-design
    :alt: We practice Ethical Design
+
+.. |sloccount| image:: https://img.shields.io/badge/estimated%20cost%20-$9,107-yellow.svg
+   :target: http://www.dwheeler.com/sloccount/
+   :alt: Provided to you free of charge!
