@@ -106,6 +106,18 @@ def free():
            "echo 'Free Memory:\t\t%d MB';" % (vmStats["Pages free"]/1024/1024) + \
            "echo 'Real Mem Total (ps):\t%.3f MB';" % (rssTotal/1024/1024)
 
+def package_list():
+    """List all packages in the ~/.fterm directory."""
+    return "ls -1 ~/.fterm"
+
+def package_add(*packages):
+    """Add a package to the .fterm directory."""
+    return "mv %s ~/.fterm" * len(packages) % tuple(packages)
+
+def package_remove(*packages):
+    """Remove a package from the .fterm directory."""
+    return "rm ~/.fterm/%s" * len(packages) % tuple(packages)
+
 def fterm_version():
     """Return the current version of fTerm."""
     return "echo {VERSION};"
