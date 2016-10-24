@@ -8,15 +8,15 @@ Packages
 
 About
 -----
-fTerm allows for the installation of files in the *main* folder.
+fTerm allows for the installation of .py files in the ~/.fterm folder fTerm will automatically load these on excecution of the 'f' command.
 
 Requirements
 ------------
 Each file installed contains functions. fTerm automatically reads the number of arguments and docstrings of each function in each file installed. The name each fTerm command will be (lowercase) the name of the function defined in the file.
 
-(dict) synonyms
-^^^^^^^^^^^^^^^
-Synonyms is a dictionary containing alternate names for functions. The key/value pairs contain the alternate names mapping to the original names. For example, if you wanted to add "write" and "scribble" synonyms to the function "edit":
+Synonyms
+^^^^^^^^
+synonyms (lowercase) is a dictionary containing alternate names for functions. The key/value pairs contain the alternate names mapping to the original names. For example, if you wanted to add "write" and "scribble" synonyms to the function "edit":
 
 .. code:: python
 
@@ -29,8 +29,9 @@ Synonyms is a dictionary containing alternate names for functions. The key/value
 
 **NOTE THAT** all functions in a package must have an entry as a value in *synonyms*. If you do not wish to add any synonyms for function *func*, you can simply add the entry `"func":"func"` to *synonyms*.
 
-functions
+Functions
 ^^^^^^^^^
+
 Functions in fTerm are defined as functions that take arguments (fTerm will automatically parse the number of arguments), and that return strings of BASH commands, seperated by semicolons (and ending with one) For example,
 
 .. code:: python
@@ -57,6 +58,7 @@ Functions in fTerm are defined as functions that take arguments (fTerm will auto
 
 =====
 Style
+
 =====
 The fTerm project uses the PEP8 standard, through the [Pylint](https://www.pylint.org/) linter. However, in cases where PEP requests are extraneous or otherwise unreasonable, you may ignore them by adding, at the beginning of the file, after the docstring
 
@@ -66,15 +68,18 @@ The fTerm project uses the PEP8 standard, through the [Pylint](https://www.pylin
    # pylint: disable-msg={{id of error}}
 
 
-## Module docstrings
+Module docstrings
+-----------------
+
 Docstrings, which must be at the beginning of all program files, should be of the following format:
 
 .. code:: python
 
+   """
    [{{name of package}}] {{name of file}}
 
    {{explanation of what the file does}}
-
+   """
 
 *e.g.*, for the fTerm core file *parser.py*,
 

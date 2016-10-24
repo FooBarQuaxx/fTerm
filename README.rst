@@ -264,12 +264,12 @@ Packages
 
 - `git (aliases) <https://github.com/fterm/package-git>`_
 - `zapcore (file compression) <https://github.com/fterm/package-zapcore>`_
-   
+- `assistant (miscellaneous 'assistant-like' operations) <https://github.com/fterm/package-assistant`_
+- `network (pentesting) <https://github.com/fterm/package-assistant>`_
+  
 =========
 Extending
 =========
-
-
 
 See `DEVELOPERS.rst <DEVELOPERS.rst>`_ for details.
 
@@ -321,6 +321,6 @@ This project is licensed under the GNU GPL License, version 3.0 - see the `LICEN
    :target: https://ind.ie/ethical-design
    :alt: We practice Ethical Design
 
-.. |sloccount| image:: https://img.shields.io/badge/estimated%20cost%20-$9,107-yellow.svg
+.. |sloccount| image:: https://img.shields.io/badge/estimated%20cost%20-$9,458-yellow.svg
    :target: http://www.dwheeler.com/sloccount/
    :alt: Provided to you free of charge!
