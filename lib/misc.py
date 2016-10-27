@@ -114,7 +114,7 @@ def free():
 
 def package_list():
     """List all packages in the ~/.fterm directory."""
-    return "ls -1 ~/.fterm;"
+    return "ls -1 ~/.fterm | grep -v '.pyc';"
 
 def package_add(*packages):
     """Add a package to the .fterm directory."""
