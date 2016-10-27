@@ -28,6 +28,12 @@ synonyms = {
     
     "memory":"free",
     
+    "list_packages":"package_list",
+
+    "add_package":"package_add",
+
+    "remove_package":"package_remove",
+
     "fterm-edition":"fterm_version",
     "version":"fterm_version",
     }
