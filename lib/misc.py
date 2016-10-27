@@ -114,15 +114,15 @@ def free():
 
 def package_list():
     """List all packages in the ~/.fterm directory."""
-    return "ls -1 ~/.fterm"
+    return "ls -1 ~/.fterm;"
 
 def package_add(*packages):
     """Add a package to the .fterm directory."""
-    return "mv %s ~/.fterm" * len(packages) % tuple(packages)
+    return "mv %s ~/.fterm;" * len(packages) % tuple(packages)
 
 def package_remove(*packages):
     """Remove a package from the .fterm directory."""
-    return "rm ~/.fterm/%s" * len(packages) % tuple(packages)
+    return "rm ~/.fterm/%s;" * len(packages) % tuple(packages)
 
 def fterm_version():
     """Return the current version of fTerm."""
