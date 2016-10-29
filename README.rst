@@ -259,6 +259,23 @@ unpack *\*files*
 
 Unpack a tar archive into a file/folder.
 
+.. lib/macos.py
+
+volume *volume*
+~~~~~~~~~~~~~~~
+
+Set volume (0-10).
+
+quit_application *appname*
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Quit (nicely) an application.
+
+relaunch_application *appname*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Relaunch an application.
+
 .. load.py
 commands
 ~~~~~~~~

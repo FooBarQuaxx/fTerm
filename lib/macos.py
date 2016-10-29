@@ -16,7 +16,7 @@ synonyms = {
     }
 
 def volume(x):
-    """Set volume."""
+    """Set volume (0-10)."""
     return 'osascript -e "set Volume %s"' % (x)
 
 def quit_application(appname):
