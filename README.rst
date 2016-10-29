@@ -159,6 +159,11 @@ read *\*files*
 ~~~~~~~~~~~~~~
 Read a file.
 
+Options
+-------
+
+- nano: open in nano
+
 edit *\*files*
 ~~~~~~~~~~~~~~
 
