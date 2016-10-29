@@ -144,7 +144,7 @@ def sort(directory, exp):
 def where():
     """(For shells that do not have a path string) show the current directory."""
     # Might be useful in a possible electron version? Scripting also. idk i was bored.
-    return 'echo "You are in "; pwd;'
+    return "echo 'You are in '; pwd;"
 
 def raw_find(directory):
     """(dev only) Recursively find all files within a directory, return as Python list."""
