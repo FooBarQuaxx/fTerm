@@ -86,9 +86,9 @@ def free():
 
     # Iterate processes
     processLines = ps.split('\n')
-    sep = re.compile('[\s]+')
+    sep = re.compile(r'[\s]+')
     rssTotal = 0 # kB
-    for row in range(1,len(processLines)):
+    for row in range(1, len(processLines)):
         rowText = processLines[row].strip()
         rowElements = sep.split(rowText)
         try:
@@ -99,12 +99,12 @@ def free():
 
         # Process vm_stat
         vmLines = vm.split('\n')
-        sep = re.compile(':[\s]+')
+        sep = re.compile(r':[\s]+')
         vmStats = {}
-        for row in range(1,len(vmLines)-2):
+        for row in range(1, len(vmLines)-2):
             rowText = vmLines[row].strip()
             rowElements = sep.split(rowText)
-            vmStats[(rowElements[0])] = int(rowElements[1].strip('\.')) * 4096
+            vmStats[(rowElements[0])] = int(rowElements[1].strip(r'\.')) * 4096
 
     return "echo 'Wired Memory:\t\t%d MB';" % (vmStats["Pages wired down"]/1024/1024) + \
            "echo 'Active Memory:\t\t%d MB';" % (vmStats["Pages active"]/1024/1024) + \
@@ -117,11 +117,11 @@ def package_list():
     return "ls -1 ~/.fterm | grep -v '.pyc';"
 
 def package_add(*packages):
-    """Add a package to the .fterm directory."""
+    """Add a package to the ~/.fterm directory."""
     return "mv %s ~/.fterm;" * len(packages) % tuple(packages)
 
 def package_remove(*packages):
-    """Remove a package from the .fterm directory."""
+    """Remove a package from the ~/.fterm directory."""
     return "rm ~/.fterm/%s;" * len(packages) % tuple(packages)
 
 def fterm_version():

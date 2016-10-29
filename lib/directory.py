@@ -73,7 +73,7 @@ def temp():
 def List(*dirs, **keywords): # name capitalised for no name conflict
     """List the files in a directory."""
     adj_prefix = ""
-    if ["oneline"] in keywords.values():
+    if ["long"] in keywords.values():
         adj_prefix += "-l "
     return "ls %s %s;" % (adj_prefix, ' '.join(dirs))
 

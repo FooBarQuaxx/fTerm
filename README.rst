@@ -22,11 +22,11 @@ fTerm is a terminal command parser with english syntax and natural language proc
 How-To
 ======
 
-To run *command* with arguments *a1, a2,...*, simply run
+To run *command* with arguments *a1, a2,...*, and adjectives *b1, b2,...* simply run
 
 .. code::
 
-   f command a1, a2,...
+   f command [b1, b2...] a1, a2,...
 
 
 The fTerm interpreter will then attempt to interpret *command*.
@@ -56,6 +56,18 @@ Examples
    [f-i] list⏎
    a.txt
    c.mp4
+
+.. code::
+   $ f list [oneline]
+   drwx------    3 lschumm  staff    102 Sep  3 10:55 Applications
+   drwx------+  17 lschumm  staff    578 Oct 28 16:21 Desktop
+   drwx------+  15 lschumm  staff    510 Oct 28 20:19 Documents
+   drwx------+  62 lschumm  staff   2108 Oct 28 20:24 Downloads
+   drwx------@  64 lschumm  staff   2176 Oct  8 22:13 Library
+   drwx------+   5 lschumm  staff    170 Oct 20 08:39 Movies
+   drwx------+   5 lschumm  staff    170 Oct  6 08:08 Music
+   drwx------+  11 lschumm  staff    374 Oct 25 11:54 Pictures
+   drwxr-xr-x+   5 lschumm  staff    170 Sep  2 13:57 Public
 
 .. code::
 
@@ -92,147 +104,172 @@ Commands
 
 .. lib/directory.py
 temp
-----
+~~~~
 
 Make a temporary file.
 
 list *\*dirs*
--------------
+~~~~~~~~~~~~~
 
 List the files in a directory.
 
+Options
+-------
+
+- oneline: long format (-l option)
+
+
 swap *file1* *file2*
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 A function that swaps the names of two files.
 
 delete *\*files*
-----------------
+~~~~~~~~~~~~~~~~
 
 Delete a file or directory.
 
 move *path1* *path2*
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Move the file or folder at *path1* to *path2*.
 
 copy *path1* *path2*
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 Copy the file or folder at *path1* to *path2*.
 
 sort *directory* *exp*
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Takes a directory *directory* and a regular expression *exp*. Sorts each file into a folder with name equal to the match of *exp* in its filename.
 
 where
------
+~~~~~
 
 (For shells that don't have a path string) show the current directory.
 
 find *directory* *exp="[\s\S]\*"* *func=""*
--------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Find all files in *directory* that match (python) regular expression *exp*. If specified, runs *func* on these files.
 
 .. lib/file.py
 read *\*files*
---------------
+~~~~~~~~~~~~~~
 Read a file.
 
 edit *\*files*
---------------
+~~~~~~~~~~~~~~
 
 Edit a file.
    
 addline *filename* *line*
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Append *line* to *filename*.
 
 removeline *filename* *line*
-----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Remove the line of number *line* (0-indexed) from file *filename*.
+Remove the line of number *line* (0~indexed) from file *filename*.
 
 .. lib/misc.py
 size *\*files*
---------------
+~~~~~~~~~~~~~~
 
-Return the size of a file in human-readable format.
+Return the size of a file in human~readable format.
 
 run *\*files*
--------------
+~~~~~~~~~~~~~
 
 A universal run function.
 
 kill *\*processes*
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Kill the process with name *processname*.
 
 processes
----------
+~~~~~~~~~
 
 Alias for htop.
 
 users
------
+~~~~~
 
 Alias for w.
 
 rtfm *\*manpages*
------------------
+~~~~~~~~~~~~~~~~~
 
 Fun shortcut to man.
 
+free
+~~~~
+
+(MacOS doesn't have a free command) Return memory statistics.
+
+package_list
+~~~~~~~~~~~~
+
+List all packages in the ~/.fterm directory.
+
+package_add
+~~~~~~~~~~~
+
+Add a package to the ~/.fterm directory.
+
+package_remove
+~~~~~~~~~~~~~~
+
+Remove a package from the ~/.fterm directory.
+
+fterm_version
+~~~~~~~~~~~~~
+
 .. lib/zapcore.py
 compress *\*files*
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Compress a file.
 
 decompress *\*files*
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 Decompress a file.
 
 decrypt *\*files*
------------------
+~~~~~~~~~~~~~~~~~
 
 Decrypt a file.
 
 encrypt *\*files*
------------------
+~~~~~~~~~~~~~~~~~
 
 Encrypt a file.
 
 pack *\*files*
---------------
+~~~~~~~~~~~~~~
 
 Pack a file/folder into a tar archive (no compression).
 
 unpack *\*files*
-----------------
+~~~~~~~~~~~~~~~~
 
 Unpack a tar archive into a file/folder.
 
 .. load.py
 commands
---------
+~~~~~~~~
 
 List all fTerm commands, their argspecs, and their docstrings.
 
 help *commandname*
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Returns the docstring for fTerm command *commandname*.
 
-fterm_version
--------------
-
-Returns the current fTerm version.
 
 ****************
 Installing (Mac)
@@ -306,7 +343,7 @@ This project is licensed under the GNU GPL License, version 3.0 - see the `LICEN
    :alt: fTerm demo #2
    :align: center
 
-.. |homebrew| image:: https://img.shields.io/badge/homebrew-2.0.1b3-brown.svg
+.. |homebrew| image:: https://img.shields.io/badge/homebrew-2.0.1b11-brown.svg
    :alt: Homebrew
 
 .. |gplv3| image:: https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg
@@ -321,6 +358,6 @@ This project is licensed under the GNU GPL License, version 3.0 - see the `LICEN
    :target: https://ind.ie/ethical-design
    :alt: We practice Ethical Design
 
-.. |sloccount| image:: https://img.shields.io/badge/estimated%20cost%20-$9,458-yellow.svg
+.. |sloccount| image:: https://img.shields.io/badge/estimated%20cost%20-$9,647-yellow.svg
    :target: http://www.dwheeler.com/sloccount/
    :alt: Provided to you free of charge!
