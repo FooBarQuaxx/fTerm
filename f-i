@@ -23,7 +23,7 @@ from load import verbs
 
 def shellquote(s):
     """Fix quotes for terminal."""
-    return "'" + s.replace("'", "'\\''") + "'"
+    return "'" + s.replace("'", "\\'") + "'"
 
 def adjectives_and_nouns(args):
     """Find adjectives in arguments."""
@@ -69,7 +69,7 @@ def run():
         except (KeyError, IndexError):
             print "echo '[f-i] Invalid function %s';" % (argv[1]),
             return
-        args = adjectives_and_nouns([x.replace(" ", "\\ ") for x in argv[2:]])
+        args = adjectives_and_nouns([shellquote(x.replace(" ", "\\ ")) for x in argv[2:]])
         adj = args[0]
         nouns = args[1]
         #suggestion += " " + " ".join(args)
