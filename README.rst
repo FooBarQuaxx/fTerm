@@ -318,7 +318,7 @@ Packages
 
 - `git (aliases) <https://github.com/fterm/package-git>`_
 - `zapcore (file compression) <https://github.com/fterm/package-zapcore>`_
-- `assistant (miscellaneous 'assistant-like' operations) <https://github.com/fterm/package-assistant`_
+- `assistant (miscellaneous 'assistant-like' operations) <https://github.com/fterm/package-assistant>`_
 - `network (pentesting) <https://github.com/fterm/package-assistant>`_
   
 =========
