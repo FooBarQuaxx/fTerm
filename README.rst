@@ -365,7 +365,7 @@ This project is licensed under the GNU GPL License, version 3.0 - see the `LICEN
    :alt: fTerm demo #2
    :align: center
 
-.. |homebrew| image:: https://img.shields.io/badge/homebrew-2.0.1b11-brown.svg
+.. |homebrew| image:: https://img.shields.io/badge/homebrew-3.0.0-brown.svg
    :alt: Homebrew
 
 .. |gplv3| image:: https://img.shields.io/badge/license-GNU%20GPL%20version%203-blue.svg
