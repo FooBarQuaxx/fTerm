@@ -43,7 +43,7 @@ def commands():
 
     call = ""
 
-    for verb in verbs:
+    for verb in sorted(verbs):
         args = formatargspec(*getargspec(verbs[verb]))
         call += "echo '%s %s : %s';" %  (verb, args, verbs[verb].__doc__)
 
