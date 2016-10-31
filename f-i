@@ -12,7 +12,7 @@ This program is the main file for fTerm.
 # NOTE: this would make line 19 unreadable
 # pylint: disable=C0301
 
-# allows parsing of arguments and calling exit
+# allows parsing of arguments
 import sys
 
 # parser
