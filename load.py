@@ -20,7 +20,7 @@ from inspect import formatargspec, getargspec
 
 # import default commands
 import lib
-            
+
 verbs = {}
 synonyms = {}
 
@@ -38,14 +38,15 @@ for item in dir(lib):
 verbs = {item:verbs[item] for item in verbs if item in synonyms.values()}
 
 
-def commands():
+def commands(*args, **kwargs):
     """List all fTerm commands, tabulated."""
 
     call = ""
 
     for verb in sorted(verbs):
         args = formatargspec(*getargspec(verbs[verb]))
-        call += "echo '%s %s : %s';" %  (verb, args, verbs[verb].__doc__)
+        doc = verbs[verb].__doc__.replace("'", "\\'")
+        call += "echo $'%s %s : %s';" %  (verb, args, doc)
 
     return call
 
