@@ -12,8 +12,8 @@ This program is the main file for fTerm.
 # NOTE: this would make line 19 unreadable
 # pylint: disable=C0301
 
-# allows parsing of arguments
-from sys import argv
+# allows parsing of arguments and calling exit
+import sys
 
 # parser
 import parser
@@ -24,6 +24,10 @@ from load import verbs
 def shellquote(s):
     """Fix quotes for terminal."""
     return "'" + s.replace("'", "\\'") + "'"
+
+def escape_spaces(s):
+    """Escape spaces on a string."""
+    return s.replace(" ", "\\ ")
 
 def adjectives_and_nouns(args):
     """Find adjectives in arguments."""
@@ -53,35 +57,33 @@ def adjectives_and_nouns(args):
             nouns.append(item)
     return (adj, nouns)
         
-def run():
+def run(argv):
     """The main function for fTerm"""
-    argnum = len(argv)
-    if argnum == 1:
+    if len(argv) < 2:
         print "echo '[f-i] Please specify a command (e.g., f swap file1 file2)';"
         return
-    else:
-        # retrieve the function
-        try:
-            suggestion = "[f-i] "
-            f = parser.parse(argv[1])
-            suggestion += f
-            f = verbs[f]
-        except (KeyError, IndexError):
-            print "echo '[f-i] Invalid function %s';" % (argv[1]),
-            return
-        args = adjectives_and_nouns([shellquote(x.replace(" ", "\\ ")) for x in argv[2:]])
-        adj = args[0]
-        nouns = args[1]
-        #suggestion += " " + " ".join(args)
-        try:
-            if adj != []:
-                print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*nouns, adjectives=adj), f(*nouns, adjectives=adj))
-            else:
-                try:
-                    print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*nouns), f(*nouns))
-                except TypeError:
-                    print "read -p \'%s\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"%s\"; %s fi" % (suggestion, f(*nouns), f(*nouns))
-        except TypeError:
-            print "echo '[f-i] Wrong number of arguments for function %s';" % (argv[1])
+    
+    cmd, args = argv[1], argv[2:]
+    
+    try:
+        suggestion = "[f-i] "
+        f = parser.parse(cmd)
+        suggestion += f
+        f = verbs[f]
+    except (KeyError, IndexError):
+        print "echo '[f-i] Invalid function %s';" % (cmd),
+        return
+    adj, nouns = adjectives_and_nouns([shellquote(escape_spaces(x)) for x in args])
+    #suggestion += " " + " ".join(args)
+    try:
+        if not adj:
+            print "read -p \'{0}\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"{1}\"; {1} fi".format(suggestion, f(*nouns, adjectives=adj))
+        else:
+            try:
+                print "read -p \'{0}\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"{1}\"; {1} fi".format(suggestion, f(*nouns))
+            except TypeError:
+                print "read -p \'{0}\' -n 1 -r; if [[ $REPLY =~ ^$ ]]; then F=\"{1}\"; {1} fi".format(suggestion, f(*nouns))
+    except TypeError:
+        print "echo '[f-i] Wrong number of arguments for function %s';" % (cmd)
 
-run()
+run(sys.argv)
